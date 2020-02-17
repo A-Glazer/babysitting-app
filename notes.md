@@ -1,8 +1,23 @@
-1. Homepage (Welcome)
-    a. View babysitters
-    b. Add a new babysitter
+<!-- 1. Login Screen
+    a. Login 
+    b. Signup
 
-2. Add new Babysitter Form
+2. Login Form
+    a. email
+    b. password
+
+3. Sign Up form
+    a. Name
+    b. email
+    c. password
+    d. confirm password -->
+
+4. Homepage (Welcome)
+    a. View all babysitters
+    b. Add a new babysitter
+    <!-- c. View my babysitters (babysitters you used before) -->
+
+5. Add new Babysitter Form
     a. First Name
     b. Last Name
     c. Phone Number
@@ -10,20 +25,28 @@
     e. Time Availability (checkbox: Morning, afternoon, evening)
     f. Zipcode
 
-3. View Babysitters
+6. View all Babysitters
     a. Card for each babysitter (alphabetical by last name)
     b. Filter 
         i. Filter by date
         ii. Filter by time
     c. Delete Babysitter
     d. Add a Comment
+   
     <!-- e. Recommended (thumbs up) ?? -->
+<!-- 7. View my babysitters
+    a. Cards of babysitters that have checkbox that used -->
 
 
-4. Add a comment form (rendered on babysitter view page)
+8. Add a comment form (rendered on babysitter view page)
     a. Message box
     b. Submit
 
+9. Navbar
+    a. Home
+    b. View Babysitters
+    c. Logout
+    
 
 
 Notes:
