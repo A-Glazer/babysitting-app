@@ -23,7 +23,7 @@
     c. Phone Number
     d. Days of the Week Availability (checkbox Sun, Mon, Tues, Wed, Thurs, Fri, Sat.)
     e. Time Availability (checkbox: Morning, afternoon, evening)
-    f. Zipcode
+
 
 6. View all Babysitters
     a. Card for each babysitter (alphabetical by last name)
