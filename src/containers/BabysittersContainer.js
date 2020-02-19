@@ -1,10 +1,15 @@
 import React from 'react'
 import BabysitterInput from '../components/BabysitterInput'
 import Babysitters from '../components/Babysitters'
+import {fetchBabysitters} from '../actions/fetchBabysitters'
 import { connect } from 'react-redux'
 
 class BabysittersContainer extends React.Component {
     
+    componentDidMount() {
+       this.props.fetchBabysitters()
+    }
+
     render() {
         return(
             <div>
@@ -22,4 +27,4 @@ const mapStateToProps = state => {
 } 
 
 
-export default connect(mapStateToProps)(BabysittersContainer)
+export default connect(mapStateToProps, {fetchBabysitters})(BabysittersContainer)
