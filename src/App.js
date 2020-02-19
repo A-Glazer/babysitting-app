@@ -5,10 +5,6 @@ import {fetchBabysitters} from './actions/fetchBabysitters'
 
 class App extends React.Component {
 
-  componentDidMount() {
-   
-  }
-
   render() {
 
     return (
