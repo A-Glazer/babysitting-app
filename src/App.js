@@ -15,8 +15,8 @@ class App extends React.Component {
 }
 
 
-
-export default connect()(App);
+export default App
+// export default connect()(App);
 // we don't need to get anything from the store, so we don't need 
 // mapStateToProps. However, we want to update the store so we need
 // mapDispatchToProps
