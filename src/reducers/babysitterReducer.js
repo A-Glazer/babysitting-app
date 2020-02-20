@@ -1,7 +1,13 @@
 
 export default function babysitterReducer(state = {babysitters: []}, action ){
 
-    return state
-
-
+    switch (action.type) {
+        case 'FETCH_BABYSITTERS':
+            return {babysitters: action.payload}
+        
+        default:
+            return state
+            
+            
+        }
 }
