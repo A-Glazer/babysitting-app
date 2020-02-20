@@ -9,6 +9,8 @@ export const addBabysitter = data => {
             method: 'POST',
             body: JSON.stringify(data)
         })
+        .then(response => response.json())
+        .then(babysitter => dispatch({type: "ADD_BABYSITTER", payload: babysitter}) )
     }
 
 
