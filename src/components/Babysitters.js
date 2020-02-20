@@ -6,9 +6,9 @@ const Babysitters = ({babysitters}) => {
     return (
         <div>
             {babysitters.map(baby => 
-                <li key={baby.id}>
+                <div key={baby.id}>
                     <BabysitterShow babysitter={baby} />
-                </li>
+                </div>
 
                 
                 )}
