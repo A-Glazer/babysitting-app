@@ -1,18 +1,16 @@
 import React from 'react'
+import BabysitterShow from './BabysitterShow'
 
 const Babysitters = ({babysitters}) => {
 
     return (
         <div>
             {babysitters.map(baby => 
-                <ul>
-                    <li key={baby.id}>
-                        <b>{baby.last_name}, {baby.first_name} </b>
-                        <br/>
-                        {baby.phone_number}
-                    </li>
+                <li key={baby.id}>
+                    <BabysitterShow babysitter={baby} />
+                </li>
 
-                </ul>
+                
                 )}
         </div>
     )
