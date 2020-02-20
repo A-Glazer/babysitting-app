@@ -3,6 +3,7 @@ import BabysitterInput from '../components/BabysitterInput'
 import Babysitters from '../components/Babysitters'
 import {fetchBabysitters} from '../actions/fetchBabysitters'
 import { connect } from 'react-redux'
+import {Route} from 'react-router-dom'
 
 class BabysittersContainer extends React.Component {
     
@@ -13,8 +14,9 @@ class BabysittersContainer extends React.Component {
     render() {
         return(
             <div>
-                <BabysitterInput /><br/><br/>
-                <Babysitters babysitters={this.props.babysitters} />
+                <Route path='/babysitters/new' component={BabysitterInput}/>
+                <Route path='/babysitters' render={() => <Babysitters babysitters={this.props.babysitters} /> } />
+                
             </div>
         )
     }
