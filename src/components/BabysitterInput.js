@@ -1,7 +1,8 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {addBabysitter} from '../actions/addBabysitter'
 
-
-export default class BabysitterInput extends React.Component {
+ class BabysitterInput extends React.Component {
 
     state = {
         first_name: '',
@@ -16,10 +17,15 @@ export default class BabysitterInput extends React.Component {
        })
     }
 
+    handleOnSubmit = event => {
+        event.preventDefault()
+        this.props.addBabysitter(this.state)
+    }
+
     render() {
         return(
             <div>
-                <form >
+                <form onSubmit={this.handleOnSubmit} >
                     <label>First Name: </label>
                     <input type="text" placeholder="First Name" value={this.state.first_name} name="first_name" onChange={this.handleOnChange} />
                     <br/><br/>
@@ -28,8 +34,13 @@ export default class BabysitterInput extends React.Component {
                     <br/><br/>
                     <label>Phone Number: </label>
                     <input type="text" placeholder="Phone Number" value={this.state.phone_number} name="phone_number" onChange={this.handleOnChange}/>
+                    <br/><br/>
+                    <input type="submit"/>
                 </form>
             </div>
         )
     }
 }
+
+export default connect(null, {addBabysitter})(BabysitterInput)
+// doesnt need anything from the store, only add new to store
