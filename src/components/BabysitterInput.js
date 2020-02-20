@@ -20,6 +20,11 @@ import {addBabysitter} from '../actions/addBabysitter'
     handleOnSubmit = event => {
         event.preventDefault()
         this.props.addBabysitter(this.state)
+        this.setState({
+            first_name: '',
+            last_name: '',
+            phone_number: ''
+        })
     }
 
     render() {
