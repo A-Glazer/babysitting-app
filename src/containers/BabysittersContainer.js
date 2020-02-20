@@ -14,7 +14,7 @@ class BabysittersContainer extends React.Component {
         return(
             <div>
                 <BabysitterInput />
-                <Babysitters />
+                <Babysitters babysitters={this.props.babysitters} />
             </div>
         )
     }
