@@ -1,11 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {addSlot} from '../actions/addSlot'
 
 class SlotInput extends React.Component {
 
 state= {
    day_of_week: 'Sunday',
-   time_of_day: '' 
+   time_of_day: 'Morning' 
 }
 
 handleOnChange = (event) => {
@@ -16,7 +17,7 @@ handleOnChange = (event) => {
 
 handleOnSubmit = event => {
     event.preventDefault()
-
+    // addSlot(this.state, this.props.id)
 }
 
 
@@ -50,7 +51,7 @@ handleOnSubmit = event => {
 
 }
 
-export default SlotInput
+export default connect(null)(SlotInput)
 
 // t.integer "day_of_week"
 // t.integer "time_of_day"

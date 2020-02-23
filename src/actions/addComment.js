@@ -1,17 +1,15 @@
-export const addComment = data => {
-   
-    return(dispatch) => {
-        fetch('http://localhost:3000/api/v1/babysitters', {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
+export const addComment = (comment, babysitterId) => {
+
+    return (dispatch) => {
+        fetch(`http://localhost3000/api/v1/babysitters/${babysitterId}/comments`, {
             method: 'POST',
-            body: JSON.stringify(data)
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(comment)
         })
         .then(response => response.json())
-        .then(comment => dispatch({type: "ADD_COMMENT", payload: comment}) )
+        .then(comment => dispatch({type: 'ADD_COMMENT', payload: comment}))
     }
-
-
-}
+    
+    }

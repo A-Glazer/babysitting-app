@@ -15,6 +15,9 @@ export default function babysitterReducer(state = {babysitters: []}, action ){
                 comments: [...state.comments, action.payload]
             }
 
+        case 'ADD_SLOT':
+            return
+
         default:
             return state
             

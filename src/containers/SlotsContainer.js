@@ -8,7 +8,7 @@ class SlotsContainer extends React.Component {
         // console.log(this.props.babysitter.slots)
         return(
             <div>
-                <SlotInput />
+                <SlotInput babysitter={this.props.babysitter}/>
                 <Slots slots={this.props.babysitter && this.props.babysitter.slots}/>
             </div>
         )

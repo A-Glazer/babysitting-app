@@ -8,7 +8,7 @@ class CommentsContainer extends React.Component {
         console.log(this.props.babysitter)
         return(
             <div>
-                <CommentInput />
+                <CommentInput babysitter={this.props.babysitter}/>
                 <Comments comments={this.props.babysitter && this.props.babysitter.comments}/>
             </div>
         )
