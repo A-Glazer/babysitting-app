@@ -4,12 +4,12 @@ import Comments from '../components/Comments'
 
 class CommentsContainer extends React.Component {
 
-
     render() {
+        console.log(this.props.babysitter)
         return(
             <div>
                 <CommentInput />
-                <Comments />
+                <Comments comments={this.props.babysitter && this.props.babysitter.comments}/>
             </div>
         )
     }
