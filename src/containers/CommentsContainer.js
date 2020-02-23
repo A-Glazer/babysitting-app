@@ -1,4 +1,5 @@
 import React from 'react'
+import CommentInput from '../components/CommentInput'
 
 class CommentsContainer extends React.Component {
 
@@ -6,7 +7,7 @@ class CommentsContainer extends React.Component {
     render() {
         return(
             <div>
-                Comments Container
+                <CommentInput />
             </div>
         )
     }
@@ -17,4 +18,4 @@ class CommentsContainer extends React.Component {
 
 }
 
-export default CommentsContainers
+export default CommentsContainer
