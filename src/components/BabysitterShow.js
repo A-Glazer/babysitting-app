@@ -3,13 +3,9 @@ import {Redirect} from 'react-router-dom'
 import CommentsContainer from '../containers/CommentsContainer'
 
 const BabysitterShow = (props) => {
-    let babysitter = props.babysitters[props.match.params.id -1]
-
-    console.log(props)
-    // function babysitterExist(){
-    //     if (babysitter)
-    // }
-
+    // let babysitter = props.babysitters[props.match.params.id -1]
+    let babysitter = props.babysitters.filter(baby => baby.id == props.match.params.id)[0]
+    console.log(babysitter)
 
     return (
         <div>
