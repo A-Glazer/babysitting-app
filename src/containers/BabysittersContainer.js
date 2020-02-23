@@ -18,15 +18,9 @@ class BabysittersContainer extends React.Component {
             <div>
                 <Route path='/babysitters/new' component={BabysitterInput}/>
                 <Route path='/babysitters/:id' render={(routerProps) => 
-                    <BabysitterShow 
-                        {...routerProps} 
-                        babysitters={this.props.babysitters} 
-                    /> }   />
-                <Route exact path='/babysitters' 
-                    render={(routerProps) => 
-                        <Babysitters 
-                            {...routerProps} 
-                            babysitters={this.props.babysitters} /> } />
+                    <BabysitterShow {...routerProps} babysitters={this.props.babysitters} /> }   />
+                <Route exact path='/babysitters' render={(routerProps) => 
+                        <Babysitters {...routerProps} babysitters={this.props.babysitters} /> } />
                 
             </div>
         )

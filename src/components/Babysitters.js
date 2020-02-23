@@ -1,4 +1,5 @@
 import React from 'react'
+import {Route, Link} from 'react-router-dom'
 import BabysitterShow from './BabysitterShow'
 
 const Babysitters = ({babysitters}) => {
@@ -6,9 +7,10 @@ const Babysitters = ({babysitters}) => {
     return (
         <div>
             {babysitters.map(baby => 
-                <div key={baby.id}>
-                    <BabysitterShow babysitter={baby} />
-                </div>
+                <li key={baby.id}>
+                    <Link to={`/babysitters/${baby.id}`}>{baby.last_name}, {baby.first_name}</Link>
+                    
+                </li>
 
                 
                 )}
