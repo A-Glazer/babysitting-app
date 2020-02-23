@@ -1,5 +1,6 @@
 import React from 'react'
 import CommentInput from '../components/CommentInput'
+import Comments from '../components/Comments'
 
 class CommentsContainer extends React.Component {
 
@@ -8,6 +9,7 @@ class CommentsContainer extends React.Component {
         return(
             <div>
                 <CommentInput />
+                <Comments />
             </div>
         )
     }
