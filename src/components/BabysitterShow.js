@@ -12,8 +12,9 @@ const BabysitterShow = (props) => {
         <div>
             <h2>{babysitter ? babysitter.last_name : null}, {babysitter ? babysitter.first_name : null}</h2>
             <h4>{babysitter ? babysitter.phone_number : null}</h4>
-            <CommentsContainer babysitter={babysitter}/>
-            <SlotsContainer babysitter={babysitter} />
+            <u>Slots: </u><SlotsContainer babysitter={babysitter} />
+            <br/>
+            <u>Comments: </u><CommentsContainer babysitter={babysitter}/>
         </div>
     )
 }

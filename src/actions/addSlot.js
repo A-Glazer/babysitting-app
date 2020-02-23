@@ -9,7 +9,7 @@ return (dispatch) => {
         body: JSON.stringify(slot)
     })
     .then(response => response.json())
-    .then(slot => dispatch({type: 'ADD_SLOT', payload: slot}))
+    .then(babysitter => dispatch({type: 'ADD_SLOT', payload: babysitter}))
 }
 
 }

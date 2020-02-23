@@ -1,6 +1,6 @@
 
 export default function babysitterReducer(state = {babysitters: []}, action ){
-
+    
     switch (action.type) {
         case 'FETCH_BABYSITTERS':
             return {babysitters: action.payload}
@@ -11,12 +11,26 @@ export default function babysitterReducer(state = {babysitters: []}, action ){
             }
         
         case 'ADD_COMMENT':
-            return {...state, 
-                comments: [...state.comments, action.payload]
+            return {...state, babysitters: state.babysitters.map(baby => {
+                if (baby.id === action.payload.id){
+                    return action.payload
+                }else{
+                    return baby                
+                }
+
             }
+                )}
 
         case 'ADD_SLOT':
-            return
+            return {...state, babysitters: state.babysitters.map(baby => {
+                if (baby.id === action.payload.id){
+                    return action.payload
+                }else{
+                    return baby                
+                }
+
+            }
+                )}
 
         default:
             return state

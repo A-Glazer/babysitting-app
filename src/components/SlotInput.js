@@ -17,7 +17,11 @@ handleOnChange = (event) => {
 
 handleOnSubmit = event => {
     event.preventDefault()
-    // addSlot(this.state, this.props.id)
+    this.props.addSlot(this.state, this.props.babysitter.id)
+    this.setState({
+        day_of_week: 'Sunday',
+        time_of_day: 'Morning' 
+    })
 }
 
 
@@ -51,7 +55,7 @@ handleOnSubmit = event => {
 
 }
 
-export default connect(null)(SlotInput)
+export default connect(null, {addSlot})(SlotInput)
 
 // t.integer "day_of_week"
 // t.integer "time_of_day"

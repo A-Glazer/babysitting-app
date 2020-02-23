@@ -18,11 +18,12 @@ class CommentInput extends React.Component {
 
     handleOnSubmit = event => {
         event.preventDefault()
-        this.props.addComment(this.state)
+        this.props.addComment(this.state, this.props.babysitter.id)
         this.setState({
             name: '',
             message: ''
         })
+        
     }
 
     render(){

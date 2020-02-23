@@ -6,7 +6,7 @@ const Comments = (props) => {
         <div>
             {props.comments && props.comments.map(comment =>
                 <li key={comment.id}>{comment.message} - 
-                    <i>{comment.name ? comment.name : null} {comment.created_at}</i></li>
+                    <i>{comment.name ? comment.name : null} </i></li>
                 
             )}
         </div>
