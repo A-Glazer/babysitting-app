@@ -11,13 +11,16 @@ const BabysitterShow = (props) => {
 
 
     return (
-        <div>  
-        <b>{babysitter ? babysitter.last_name : null}</b>
+        <div>
+        <h2>{babysitter ? babysitter.last_name : null}
             , {babysitter ? babysitter.first_name : null}
             <br/> 
+        </h2>
+        <p>
             {babysitter ? babysitter.phone_number : null}
             <br/>
             
+        </p>
         </div>
     )
 }
