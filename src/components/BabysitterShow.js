@@ -1,14 +1,22 @@
 import React from 'react'
 
 const BabysitterShow = (props) => {
+    let babysitter = props.babysitters[props.match.params.id -1]
 
     console.log(props)
+    // function babysitterExist(){
+    //     if (babysitter)
+    // }
+
+
     return (
-        <div>
-            <b>{props.babysitter.last_name}</b>, {props.babysitter.first_name}
+        <div>  
+        <b>{babysitter ? babysitter.last_name : null}</b>
+            , {babysitter ? babysitter.first_name : null}
             <br/> 
-            {props.babysitter.phone_number}
+            {babysitter ? babysitter.phone_number : null}
             <br/>
+            
         </div>
     )
 }
