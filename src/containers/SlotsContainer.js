@@ -14,10 +14,6 @@ class SlotsContainer extends React.Component {
         )
     }
 
-
-
-
-
 }
 
 export default SlotsContainer

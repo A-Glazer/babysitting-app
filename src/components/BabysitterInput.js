@@ -25,6 +25,7 @@ import {addBabysitter} from '../actions/addBabysitter'
             last_name: '',
             phone_number: ''
         })
+        this.props.history.push('/babysitters')
     }
 
     render() {
