@@ -14,23 +14,22 @@ export default function babysitterReducer(state = {babysitters: []}, action ){
             return {...state, babysitters: state.babysitters.map(baby => {
                 if (baby.id === action.payload.id){
                     return action.payload
-                }else{
-                    return baby                
-                }
+                }else{return baby}
+            })}
 
-            }
-                )}
+        case 'DELETE_COMMENT':
+            return {...state, babysitters: state.babysitters.map(baby => {
+                if (baby.id === action.payload.id){
+                    return action.payload
+                }else{return baby}
+            })}
 
         case 'ADD_SLOT':
             return {...state, babysitters: state.babysitters.map(baby => {
                 if (baby.id === action.payload.id){
                     return action.payload
-                }else{
-                    return baby                
-                }
-
-            }
-                )}
+                }else{return baby}
+            })}
 
         default:
             return state
