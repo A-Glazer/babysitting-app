@@ -5,6 +5,8 @@ import {fetchBabysitters} from '../actions/fetchBabysitters'
 import { connect } from 'react-redux'
 import {Route, Switch} from 'react-router-dom'
 import BabysitterShow from '../components/BabysitterShow'
+import SlotInput from '../components/SlotInput'
+
 
 
 class BabysittersContainer extends React.Component {
@@ -18,13 +20,15 @@ class BabysittersContainer extends React.Component {
             <div>
                 <Switch>
                     <Route path='/babysitters/new' component={BabysitterInput}/>
+                   
                     <Route path='/babysitters/:id' render={(routerProps) => 
                         <BabysitterShow {...routerProps} babysitters={this.props.babysitters} /> }   />
                     <Route path='/babysitters' render={(routerProps) => 
                         <Babysitters {...routerProps} babysitters={this.props.babysitters} /> } />
-                
+                    
                 </Switch>
             </div>
+            
         )
     }
 }

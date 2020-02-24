@@ -1,7 +1,7 @@
 export const addComment = (comment, babysitterId) => {
 
     return (dispatch) => {
-        fetch(`http://localhost3000/api/v1/babysitters/${babysitterId}/comments`, {
+        fetch(`http://localhost:3000/api/v1/babysitters/${babysitterId}/comments`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -1,10 +1,12 @@
 export const addSlot = (slot, babysitterId) => {
 
 return (dispatch) => {
-    fetch(`http://localhost3000/api/v1/babysitters/${babysitterId}/slots`, {
+    console.log("this is slot", slot)
+    fetch(`http://localhost:3000/api/v1/babysitters/${babysitterId}/slots`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         },
         body: JSON.stringify(slot)
     })

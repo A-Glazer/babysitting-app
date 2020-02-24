@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addBabysitter} from '../actions/addBabysitter'
+import SlotInput from './SlotInput'
 
  class BabysitterInput extends React.Component {
 
@@ -41,7 +42,9 @@ import {addBabysitter} from '../actions/addBabysitter'
                     <label>Phone Number: </label>
                     <input type="text" placeholder="Phone Number" value={this.state.phone_number} name="phone_number" onChange={this.handleOnChange}/>
                     <br/><br/>
+                    <SlotInput babysitter={this.props.babysitter}/>
                     <input type="submit"/>
+                    
                 </form>
             </div>
         )

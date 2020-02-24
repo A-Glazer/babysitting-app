@@ -77,3 +77,12 @@ src/actions
 
 
 drop down menu for time_of_day (23 min expense tracker part 9)
+
+
+to do:
+-save slot on backend and show
+-add design
+-create navbar
+-merge forms - babysitter and slots
+-add another time button on babysitter show
+-seed file is duplicating
