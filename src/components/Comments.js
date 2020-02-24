@@ -4,8 +4,8 @@ import {deleteComment} from '../actions/deleteComment'
 
 const Comments = (props) => {
 
-    const handleDelete = () => {
-
+    const handleDelete = (comment) => {
+        props.deleteComment(comment.id, comment.babysitter_id)
     }
 
     return (
@@ -13,7 +13,7 @@ const Comments = (props) => {
             {props.comments && props.comments.map(comment =>
                 <li key={comment.id}>{comment.message} - 
                     <i>{comment.name ? comment.name : null} </i>
-                    <br/><button onClick={handleDelete}>Delete</button>    
+                    <br/><button onClick={() => handleDelete(comment)}>Delete</button>    
                 </li>
                 
             )}

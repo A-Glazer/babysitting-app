@@ -1,4 +1,4 @@
-export default deleteComment = (babysitterId, commentId) => {
+export const deleteComment = (commentId, babysitterId) => {
 
     return dispatch => {
         return fetch(`http://localhost:3000/api/v1/babysitters/${babysitterId}/comments/${commentId}`, {
