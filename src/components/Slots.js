@@ -33,7 +33,6 @@ const Slots = (props) => {
 
     return (
         <div>
-            <button>Add Another Time</button>
             {props.slots && props.slots.map(slot =>
             <div>
                 {dayToString(slot.day_of_week)} - {timeToString(slot.time_of_day)}

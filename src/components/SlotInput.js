@@ -30,7 +30,6 @@ handleOnSubmit = event => {
             <div>
                 <form onSubmit={this.handleOnSubmit}>
                     <label>Day Availability: </label>
-                    {/* checkboxes of each day */}
                     <select name="day_of_week" value={this.state.day_of_week} onChange={this.handleOnChange}>
                         <option>Select Day</option>
                         <option value="0">Sunday</option>

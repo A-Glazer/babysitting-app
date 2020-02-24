@@ -25,11 +25,16 @@ export default function babysitterReducer(state = {babysitters: []}, action ){
             })}
 
         case 'ADD_SLOT':
-            return {...state, babysitters: state.babysitters.map(baby => {
-                if (baby.id === action.payload.id){
+            let babysitters = state.babysitters.map(baby => {
+                if (baby.id === action.payload.id) {
                     return action.payload
-                }else{return baby}
-            })}
+                }else{
+                    return baby
+                }
+            })
+            return {...state, babysitters: babysitters}
+            
+            
 
         default:
             return state
