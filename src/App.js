@@ -9,6 +9,9 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        {/* <Navbar /> */}
+        {/* <Home /> */}
+        Welcome to the Babysitter App!
         <BabysittersContainer />
     </div>
   );
