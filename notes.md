@@ -86,6 +86,7 @@ to do:
 -seed file is duplicating
 -add edit babysitter
 -add edit slots
+-add loading symbol
 
 bootstrap
 Cards - for each babysitter

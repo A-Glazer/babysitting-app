@@ -1,5 +1,9 @@
 .App {
     font-family: sans-serif;
-    text-align: center;
-  }
+    text-align: left;
+  };
+  
+.ml-1 {
+    margin-left: .25 !important;
+ }
   
