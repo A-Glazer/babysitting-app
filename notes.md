@@ -80,9 +80,18 @@ drop down menu for time_of_day (23 min expense tracker part 9)
 
 
 to do:
--save slot on backend and show
+-create welcome page
 -add design
 -create navbar
--merge forms - babysitter and slots
--add another time button on babysitter show
 -seed file is duplicating
+-add edit babysitter
+-add edit slots
+
+bootstrap
+Cards - for each babysitter
+Dropdowns - for date and time
+Forms - all the forms (check out form grid)
+Modal - for a delete pop up asking you if you want to delete
+Navbar
+buttons/overlays
+spinners - while loading a fetch

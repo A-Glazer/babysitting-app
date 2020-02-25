@@ -1,4 +1,5 @@
 import React from 'react';
+import "./styles.css"
 // import {connect} from 'react-redux'
 import BabysittersContainer from './containers/BabysittersContainer'
 
