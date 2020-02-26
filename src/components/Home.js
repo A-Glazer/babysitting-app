@@ -7,8 +7,8 @@ import kidsInWheelbarrow from '../images/kidsInWheelbarrow.jpg'
 import readingABook from '../images/readingABook.jpg'
 import Sisters from '../images/Sisters.jpg'
 import "../styles.css"
-import Jump from 'react-reveal/Jump';
 import Button from 'react-bootstrap/Button'
+import {Link, Route, Switch} from 'react-router-dom'
 
 
 export default class Home extends React.Component {
@@ -19,6 +19,7 @@ export default class Home extends React.Component {
         return(
             // Carousel
             <div>
+            <div className="imgContainer">
             <Carousel >
                 <Carousel.Item>
                     <img
@@ -29,34 +30,40 @@ export default class Home extends React.Component {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                    className="d-block w-100"
+                    className="d-block w-100 height-adjust"
                     src={kidsInWheelbarrow}
                     alt="Third slide"
                     />
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                    className="d-block w-100"
+                    className="d-block w-100 height-adjust"
                     src={readingABook}
                     alt="Third slide"
                     />
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                    className="d-block w-100"
+                    className="d-block w-100 height-adjust"
                     src={Sisters}
                     alt="Third slide"
                     />
                 </Carousel.Item>
                 </Carousel>
-                <Roll left>
-                <h1>Welcome to the Babysitter App! </h1>
-                </Roll>
+                <div className="title-position">
+                    <div className="title-background-box">
+                    <Roll left>
+                        <h1>Welcome to the Babysitter App! </h1>
+                    </Roll>
+                    </div>
+                </div>
+            </div>
+                
             
            <br/>  <br/>
             <h2>Would you like to </h2>
-            <Button variant="outline-info">View Babysitters</Button>
-            <Button variant="outline-info">Create a New Babysitter</Button>
+            <Link to={'/babysitters/'}><Button variant="outline-info">View Babysitters</Button></Link>
+            <Link to={'/babysitters/new'}><Button variant="outline-info">Create a New Babysitter</Button></Link>
         </div>
         )
 }

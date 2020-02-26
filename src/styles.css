@@ -1,16 +1,40 @@
 .App {
     font-family: sans-serif;
     text-align: center;
-    height: 100px
   };
   
-  .carousel .item {
-    height: 300px;
+  .carousel-inner > .item {
+    height: 200px;
+ }
+
+ .height-adjust {
+     max-height: 400px;
+     object-fit: cover;
+ }
+
+ .imgContainer {
+    position: relative;
+    text-align: center;
+    color: #0D0D0D; 
+    opacity: 100%;
+    
+ }
+
+ .title-position {
+    position: absolute;
+    top: 100px;
+    /* right: 50%; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: cursive;
   }
-  
-  .item img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-height: 300px;
+
+  .title-background-box {
+    /* background-color: black; */
+    background: rgba(204, 204, 204, 0.5);
+    background-size: 100% auto;
+    /* opacity: 0.3; */
+    width: 5000px;
+    height: 80px;
+    padding-top: 15px;
   }
