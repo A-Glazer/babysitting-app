@@ -4,6 +4,7 @@ import "./styles.css"
 import BabysittersContainer from './containers/BabysittersContainer'
 import Home from './components/Home'
 import {Route, Switch} from 'react-router-dom'
+import {NavBar} from './components/NavBar'
 
 
 class App extends React.Component {
@@ -12,7 +13,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        {/* <Navbar /> */}
+        <NavBar />
         <Switch>
 
           <Route path='/babysitters' component={BabysittersContainer}/>
