@@ -38,3 +38,20 @@
     height: 80px;
     padding-top: 15px;
   }
+
+  .button-padding {
+      margin-right: 30px;
+      margin-left: 30px;
+      margin-bottom: 30px;
+  }
+
+  .flipTitle {
+    font-family: cursive;
+    color: #800080;
+  }
+
+  .card-padding {
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
+}

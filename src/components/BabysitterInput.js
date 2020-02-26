@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addBabysitter} from '../actions/addBabysitter'
+import Flip from 'react-reveal/Flip';
 // import SlotInput from './SlotInput'
 
  class BabysitterInput extends React.Component {
@@ -32,6 +33,10 @@ import {addBabysitter} from '../actions/addBabysitter'
     render() {
         return(
             <div>
+
+            <Flip left>
+                <h1 className="flipTitle">Create a New Babysitter:</h1>
+            </Flip>
                 <form onSubmit={this.handleOnSubmit} >
                     <label>First Name: </label>
                     <input type="text" placeholder="First Name" value={this.state.first_name} name="first_name" onChange={this.handleOnChange} />

@@ -1,6 +1,8 @@
 import React from 'react'
 import CommentsContainer from '../containers/CommentsContainer'
 import SlotsContainer from '../containers/SlotsContainer'
+import Flip from 'react-reveal/Flip';
+
 // import {Redirect} from 'react-router-dom'
 // import Card from 'react-bootstrap/Card'
 // import Button from 'react-bootstrap/Button'
@@ -11,7 +13,9 @@ const BabysitterShow = (props) => {
 
     return (
         <div>
-            <h2>{babysitter ? babysitter.last_name : null}, {babysitter ? babysitter.first_name : null}</h2>
+             <Flip left>
+                <h1 className="flipTitle">{babysitter ? babysitter.last_name : null}, {babysitter ? babysitter.first_name : null}</h1>
+            </Flip>
             <h4>{babysitter ? babysitter.phone_number : null}</h4>
             <u>Slots: </u><SlotsContainer babysitter={babysitter} />
             <br/>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Babysitters from './Babysitters'
-import Roll from 'react-reveal/Roll';
+import Flip from 'react-reveal/Flip';
 import Carousel from 'react-bootstrap/Carousel'
 import babysitterWithKid from '../images/babysitterWithKid.jpg'
 import kidsInWheelbarrow from '../images/kidsInWheelbarrow.jpg'
@@ -52,18 +52,18 @@ export default class Home extends React.Component {
                 </Carousel>
                 <div className="title-position">
                     <div className="title-background-box">
-                    <Roll left>
+                    <Flip left className="flipTitle">
                         <h1>Welcome to the Babysitter App! </h1>
-                    </Roll>
+                    </Flip>
                     </div>
                 </div>
             </div>
                 
             
            <br/>  <br/>
-            <h2>Would you like to </h2>
-            <Link to={'/babysitters/'}><Button variant="outline-info">View Babysitters</Button></Link>
-            <Link to={'/babysitters/new'}><Button variant="outline-info">Create a New Babysitter</Button></Link>
+            <h2>Would you like to: </h2>
+            <Link to={'/babysitters/'}><Button variant="outline-info" className="button-padding">View Babysitters</Button></Link>
+            <Link to={'/babysitters/new'}><Button variant="outline-info" className="button-padding">Create a New Babysitter</Button></Link>
         </div>
         )
 }

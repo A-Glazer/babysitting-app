@@ -1,11 +1,8 @@
 import React from 'react';
-// import { Card, CardImg, CardText, CardBlock,
-//   CardTitle, CardSubtitle, Button } from 'reactstrap';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import CardDeck from 'react-bootstrap/CardDeck'
-import {Link, Route, Switch} from 'react-router-dom'
-import BabysitterShow from '../components/BabysitterShow'
+import {Link} from 'react-router-dom'
 
 class BabysitterCard extends React.Component {
     
@@ -19,14 +16,14 @@ render() {
 
     // let { id, first_name, last_name, phone_number} = this.props.babysitter 
     return (
-        <CardDeck>
+        <CardDeck className="card-padding">
             <Card bg="light" style={{ width: '18rem' }}>
             {/* <Card.Header>{id ? id : null}</Card.Header> */}
             <Card.Body>
                 <Card.Title>{last_name ? last_name : null}, {first_name ? first_name : null}</Card.Title>
                 <Card.Text>{phone_number ? phone_number : null}</Card.Text>
                 {/* <Button variant="outline-info" onClick={this.handleOnClick(this.props.babysitter)}>View Availability</Button>{' '} */}
-                <Link to={`/babysitters/${id}`} >View Availability</Link>
+                <Link to={`/babysitters/${id}`}><Button>View Availability</Button></Link>
 
             </Card.Body>
             </Card>
