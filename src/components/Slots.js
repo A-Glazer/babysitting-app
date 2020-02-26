@@ -1,6 +1,12 @@
 import React from 'react'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
+import CardDeck from 'react-bootstrap/CardDeck'
+import {Link} from 'react-router-dom'
+import ListGroup from 'react-bootstrap/ListGroup'
 
 const Slots = (props) => {
+    console.log("this is props", props)
 
     function dayToString(day_of_week){
         if (day_of_week === 0){
@@ -34,8 +40,25 @@ const Slots = (props) => {
     return (
         <div>
             {props.slots && props.slots.map(slot =>
+                {if (slot.day_of_week === 5) {
+                return (timeToString(slot.time_of_day))
+                // {timeToString(slot.time_of_day)}
+             
+             }},
             <div>
-                {dayToString(slot.day_of_week)} - {timeToString(slot.time_of_day)}
+
+                <Card style={{ width: '18rem' }}>
+                <Card.Header>Sunday</Card.Header>
+                <ListGroup variant="info">
+                    <ListGroup.Item>
+                        
+                        </ListGroup.Item>
+                    <ListGroup.Item>Afternoon</ListGroup.Item>
+                    <ListGroup.Item>Evening</ListGroup.Item>
+                </ListGroup>
+                </Card>
+
+                {/* {dayToString(slot.day_of_week)} - {timeToString(slot.time_of_day)} */}
             </div>    
             
             )}
