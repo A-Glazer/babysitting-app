@@ -2,6 +2,7 @@ import React from 'react';
 import "./styles.css"
 // import {connect} from 'react-redux'
 import BabysittersContainer from './containers/BabysittersContainer'
+import Home from './components/Home'
 
 class App extends React.Component {
 
@@ -10,8 +11,7 @@ class App extends React.Component {
     return (
       <div className="App">
         {/* <Navbar /> */}
-        {/* <Home /> */}
-        Welcome to the Babysitter App!
+        <Home />
         <BabysittersContainer />
     </div>
   );
