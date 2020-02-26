@@ -6,16 +6,13 @@ import {Link} from 'react-router-dom'
 
 class BabysitterCard extends React.Component {
     
-    handleOnClick = (babysitter) => {
-        console.log("This was clicked" )
-    }
-
     
 render() {
     let { id, first_name, last_name, phone_number} = this.props.babysitter 
 
     // let { id, first_name, last_name, phone_number} = this.props.babysitter 
     return (
+        <div>
         <CardDeck className="card-padding">
             <Card bg="light" style={{ width: '18rem' }}>
             {/* <Card.Header>{id ? id : null}</Card.Header> */}
@@ -29,12 +26,15 @@ render() {
             </Card>
             
         </CardDeck>
-      
+      </div>
+
     )
 }
 
 }
 
+
 export default BabysitterCard
+
 
 // {babysitter ? babysitter.last_name : null}
