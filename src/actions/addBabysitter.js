@@ -1,6 +1,7 @@
 export const addBabysitter = data => {
    
     return(dispatch) => {
+        dispatch({type: 'LOADING_BABYSITTERS'})
         fetch('http://localhost:3000/api/v1/babysitters', {
             headers: {
                 'Content-Type': 'application/json',
@@ -10,7 +11,9 @@ export const addBabysitter = data => {
             body: JSON.stringify(data)
         })
         .then(response => response.json())
-        .then(babysitter => dispatch({type: "ADD_BABYSITTER", payload: babysitter}) )
+        .then(babysitter => dispatch({
+            type: "ADD_BABYSITTER", 
+            payload: babysitter}) )
     }
 
 
