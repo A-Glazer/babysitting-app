@@ -43,8 +43,11 @@ const Slots = ({ babysitter }) => {
 
     }
 
+    // function slotFilter(slot) {
+    //     slot.filter(slot => slot.day_of_week === 0)
+    //  }
+
     function card(slot) {
-        // let slotsArr = Object.values(slot => slot.day_of_week === 0)
         return (<Card style={{ width: '18rem' }}>
             <Card.Header>{dayToString(slot.day_of_week)}</Card.Header>
             <ListGroup variant="info">
@@ -67,6 +70,11 @@ const Slots = ({ babysitter }) => {
 
 }
 export default Slots
+
+
+
+
+ 
 
 
 

@@ -23,6 +23,8 @@ class App extends React.Component {
 
           <Route path='/babysitters' component={BabysittersContainer} />
           <Route path='/' component={Home} />
+          
+
         </Switch>
       </div>
     );
