@@ -43,9 +43,6 @@ const Slots = ({ babysitter }) => {
 
     }
 
-    // function slotFilter(slot) {
-    //     slot.filter(slot => slot.day_of_week === 0)
-    //  }
 
     function card(slot) {
         return (<Card style={{ width: '18rem' }}>
