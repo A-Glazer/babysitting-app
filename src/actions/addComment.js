@@ -8,8 +8,8 @@ export const addComment = (comment, babysitterId) => {
             },
             body: JSON.stringify(comment)
         })
-        .then(response => response.json())
-        .then(babysitter => dispatch({type: 'ADD_COMMENT', payload: babysitter}))
+            .then(response => response.json())
+            .then(babysitter => dispatch({ type: 'ADD_COMMENT', payload: babysitter }))
     }
-    
-    }
+
+}

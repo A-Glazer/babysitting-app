@@ -1,32 +1,32 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {addSlot} from '../actions/addSlot'
+import { connect } from 'react-redux'
+import { addSlot } from '../actions/addSlot'
 
 class SlotInput extends React.Component {
 
-state= {
-   day_of_week: '',
-   time_of_day: '' 
-}
-
-handleOnChange = (event) => {
-    this.setState({
-        [event.target.name]: event.target.value
-    })
-    
-}
-
-handleOnSubmit = event => {
-    event.preventDefault()
-    this.props.addSlot(this.state, this.props.babysitter.id)
-    this.setState({
+    state = {
         day_of_week: '',
-        time_of_day: '' 
-    })
-}
+        time_of_day: ''
+    }
+
+    handleOnChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+
+    }
+
+    handleOnSubmit = event => {
+        event.preventDefault()
+        this.props.addSlot(this.state, this.props.babysitter.id)
+        this.setState({
+            day_of_week: '',
+            time_of_day: ''
+        })
+    }
 
     render() {
-        return(
+        return (
             <div>
                 <form onSubmit={this.handleOnSubmit}>
                     <label>Day Availability: </label>
@@ -43,12 +43,12 @@ handleOnSubmit = event => {
                     <label>Time Availability: </label>
                     <select name="time_of_day" value={this.state.time_of_day} onChange={this.handleOnChange}>
                         {/* need to iterate over times */}
-                       <option>Select Time</option>
-                       <option value="0" key={0}>Morning</option> 
-                       <option value="1" key={1}> Afternoon</option>
-                       <option value="2" key={2}>Evening</option>
+                        <option>Select Time</option>
+                        <option value="0" key={0}>Morning</option>
+                        <option value="1" key={1}> Afternoon</option>
+                        <option value="2" key={2}>Evening</option>
                     </select>
-                    <input type="submit"/>
+                    <input type="submit" />
                 </form>
             </div>
         )
@@ -56,4 +56,4 @@ handleOnSubmit = event => {
 
 }
 
-export default connect(null, {addSlot})(SlotInput)
+export default connect(null, { addSlot })(SlotInput)

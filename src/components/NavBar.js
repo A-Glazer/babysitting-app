@@ -6,18 +6,18 @@ import Button from 'react-bootstrap/Button'
 
 const NavBar = () => {
 
-        return (
+    return (
         <div>
             <Navbar bg="light" variant="light">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav className="mr-auto">
-            <Nav.Link href="/babysitters">Babysitter List</Nav.Link>
-            <Nav.Link href="/babysitters/new">New Babysitter</Nav.Link>
-            </Nav>
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav className="mr-auto">
+                    <Nav.Link href="/babysitters">Babysitter List</Nav.Link>
+                    <Nav.Link href="/babysitters/new">New Babysitter</Nav.Link>
+                </Nav>
             </Navbar>
         </div>
     )
 
 }
 
-export {NavBar}
+export { NavBar }

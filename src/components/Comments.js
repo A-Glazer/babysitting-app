@@ -1,6 +1,6 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {deleteComment} from '../actions/deleteComment'
+import { connect } from 'react-redux'
+import { deleteComment } from '../actions/deleteComment'
 
 const Comments = (props) => {
 
@@ -11,15 +11,15 @@ const Comments = (props) => {
     return (
         <div>
             {props.comments && props.comments.map(comment =>
-                <li key={comment.id}>{comment.message} - 
+                <li key={comment.id}>{comment.message} -
                     <i>{comment.name ? comment.name : null} </i>
-                    <br/><button onClick={() => handleDelete(comment)}>Delete</button>    
+                    <br /><button onClick={() => handleDelete(comment)}>Delete</button>
                 </li>
-                
+
             )}
         </div>
     )
 
 }
 
-export default connect(null, {deleteComment})(Comments)
+export default connect(null, { deleteComment })(Comments)

@@ -5,11 +5,11 @@ import Comments from '../components/Comments'
 class CommentsContainer extends React.Component {
 
     render() {
-        console.log(this.props.babysitter)
-        return(
+        // console.log(this.props.babysitter)
+        return (
             <div>
-                <CommentInput babysitter={this.props.babysitter}/>
-                <Comments comments={this.props.babysitter && this.props.babysitter.comments}/>
+                <CommentInput babysitter={this.props.babysitter} />
+                <Comments comments={this.props.babysitter && this.props.babysitter.comments} />
             </div>
         )
     }
@@ -20,4 +20,4 @@ class CommentsContainer extends React.Component {
 
 }
 
-export default CommentsContainer
+export default CommentsContainer 

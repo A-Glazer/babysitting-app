@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const BabysitterStyles = styled.div `
+const BabysitterStyles = styled.div`
     background-color: F2F2F2
 
 

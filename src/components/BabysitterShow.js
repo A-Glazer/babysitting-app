@@ -9,17 +9,18 @@ import Flip from 'react-reveal/Flip';
 
 
 const BabysitterShow = (props) => {
-    let babysitter = props.babysitters.filter(baby => baby.id == props.match.params.id)[0]
 
+    let babysitter = props.babysitters.filter(baby => baby.id == props.match.params.id)[0]
+    // console.log("babysitter on babysitter show", props)
     return (
         <div>
-             <Flip left>
+            <Flip left>
                 <h1 className="flipTitle">{babysitter ? babysitter.last_name : null}, {babysitter ? babysitter.first_name : null}</h1>
             </Flip>
             <h4>{babysitter ? babysitter.phone_number : null}</h4>
             <u>Slots: </u><SlotsContainer babysitter={babysitter} />
-            <br/>
-            <u>Comments: </u><CommentsContainer babysitter={babysitter}/>
+            <br />
+            <u>Comments: </u><CommentsContainer babysitter={babysitter} />
         </div>
     )
 }

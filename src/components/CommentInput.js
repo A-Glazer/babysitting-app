@@ -1,19 +1,19 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {addComment} from '../actions/addComment'
+import { connect } from 'react-redux'
+import { addComment } from '../actions/addComment'
 
 class CommentInput extends React.Component {
 
     state = {
         name: '',
-        message: ''        
+        message: ''
     }
 
     handleOnChange = event => {
-       this.setState({
-           [event.target.name]: event.target.value
+        this.setState({
+            [event.target.name]: event.target.value
 
-       })
+        })
     }
 
     handleOnSubmit = event => {
@@ -23,25 +23,25 @@ class CommentInput extends React.Component {
             name: '',
             message: ''
         })
-        
+
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
-               <form onSubmit={this.handleOnSubmit}>
+                <form onSubmit={this.handleOnSubmit}>
                     <label>Message: </label>
                     <input type="text" placeholder="Message" value={this.state.message} name="message" onChange={this.handleOnChange} />
-                    <br/><br/>
+                    <br /><br />
                     <label>Name: (optional) </label>
-                    <input type="text" placeholder="Name" value={this.state.name} name="name" onChange={this.handleOnChange}/>
-                    <br/><br/>
+                    <input type="text" placeholder="Name" value={this.state.name} name="name" onChange={this.handleOnChange} />
+                    <br /><br />
                     <input type="submit" />
-                </form> 
+                </form>
             </div>
         )
 
     }
 }
 
-export default connect(null, {addComment})(CommentInput)
+export default connect(null, { addComment })(CommentInput)
