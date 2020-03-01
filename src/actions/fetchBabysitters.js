@@ -56,7 +56,7 @@ export function fetchBabysitters() {
             const slotArr = slotMerge(babyData)
             console.log("This is slotArr", slotArr)
 
-            dispatch(getBabysitters(babyData))
+            dispatch(getBabysitters(slotArr))
         } catch (err) {
             alert("Failed to load babysitters")
         }

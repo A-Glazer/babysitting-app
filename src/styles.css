@@ -72,3 +72,9 @@
     font-family: sans-serif ;
     font-size: medium;
 } 
+
+.date-cards{
+  margin: auto;
+  width: 30%;
+  padding: 10px;
+}

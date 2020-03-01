@@ -6,9 +6,7 @@ import { Link } from 'react-router-dom'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Row from 'react-bootstrap/Row'
 import { render } from '@testing-library/react'
-
-const bigSlot = babysitter => { return babysitter.slots.map(slot => <h1>{slot}</h1>) }
-
+import Col from 'react-bootstrap/Col'
 
 const Slots = ({ babysitter }) => {
 
@@ -43,16 +41,23 @@ const Slots = ({ babysitter }) => {
 
     }
 
-
     function card(slot) {
-        return (<Card style={{ width: '18rem' }}>
-            <Card.Header>{dayToString(slot.day_of_week)}</Card.Header>
-            <ListGroup variant="info">
-                <ListGroup.Item>
-                    {(timeToString(slot.time_of_day))}
-                </ListGroup.Item>
-            </ListGroup>
-        </Card>
+        return (
+            <Row className="babyCard">
+                <CardDeck className="card-padding date-cards">
+                    <Card bg="light" style={{ width: '14rem' }}>
+                        <Card.Header>{dayToString(slot.day_of_week)}</Card.Header>
+                        <ListGroup variant="info">
+                            <ListGroup.Item>
+                                {slot.time_of_day.map(time =>
+                                    <div>{timeToString(time)}</div>)
+                                }
+                            </ListGroup.Item>
+                        </ListGroup>
+                    </Card>
+                </CardDeck>
+            </Row >
+
         )
     }
 
@@ -60,8 +65,7 @@ const Slots = ({ babysitter }) => {
     return (
 
         <div>
-            {babysitter.slots.map(slot => { return (card(slot)) })}
-
+            {babysitter.slots.map(slot => { return card(slot) })}
         </div>
     )
 
@@ -71,7 +75,7 @@ export default Slots
 
 
 
- 
+
 
 
 
