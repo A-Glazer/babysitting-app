@@ -10,6 +10,7 @@ export default function babysitterReducer(state = { babysitters: [], loading: fa
             }
 
         case 'FETCH_BABYSITTERS':
+            console.log("action.payload", action.payload)
             return { babysitters: action.payload, loading: false }
 
 

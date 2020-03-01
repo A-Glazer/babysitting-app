@@ -12,10 +12,9 @@ import Spinner from 'react-bootstrap/Spinner'
 
 class BabysittersContainer extends React.Component {
 
-    componentDidMount() {
-        this.props.fetchBabysitters()
+    constructor(props) {
+        super(props)
     }
-
 
     handleLoading = () => {
         if (this.props.loading) {
@@ -30,7 +29,7 @@ class BabysittersContainer extends React.Component {
     render() {
         return (
             <div>
-                {this.handleLoading()}
+                {/* {this.handleLoading()} */}
                 <Switch>
                     <Route path='/babysitters/new' component={BabysitterInput} />
 
@@ -54,4 +53,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { fetchBabysitters })(BabysittersContainer)
+export default connect(mapStateToProps)(BabysittersContainer)

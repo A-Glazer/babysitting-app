@@ -12,20 +12,16 @@ class SlotsContainer extends React.Component {
         super(props)
     }
 
-    componentDidMount() {
-        this.props.fetchBabysitters()
-    }
-
-
     handleLoading = () => {
-        if (this.props.fetchBabysitters.loading !== false) {
+        console.log("loading", this.props.loading)
+        if (this.props.loading) {
             return (
                 <div>
                     <Spinner animation="border" role="status">
                         <span className="sr-only">Loading...</span>
                     </Spinner>
                 </div>)
-        } else {
+        }else {
             return (
                 <div>
                     <SlotInput babysitter={this.props.babysitters} />
@@ -36,16 +32,18 @@ class SlotsContainer extends React.Component {
     }
 
     render() {
-        { this.handleLoading() }
-        console.log("slots on slot container", this.props.babysitter)
-        return (
-            <div>
-                <SlotInput babysitter={this.props.babysitters} />
-                <Slots babysitter={this.props.babysitter} />
-            </div>
-        )
+        if (this.props.loading) {
+            return this.handleLoading()
+        } else {
+            console.log("this is slots", this.props)
+            return (
+                <div>
+                    <SlotInput babysitter={this.props.babysitters} />
+                    <Slots babysitter={this.props.babysitter} />
+                </div>
+            )
+        }
     }
-
 }
 
 const mapStateToProps = state => {
@@ -53,8 +51,8 @@ const mapStateToProps = state => {
         babysitters: state.babysitters,
         loading: state.loading
     }
+
 }
 
-
-export default connect(mapStateToProps, { fetchBabysitters })(SlotsContainer)
+export default connect(mapStateToProps)(SlotsContainer)
 

@@ -7,6 +7,8 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import Row from 'react-bootstrap/Row'
 import { render } from '@testing-library/react'
 
+const bigSlot = babysitter => { return babysitter.slots.map(slot => <h1>{slot}</h1>) }
+
 
 const Slots = ({ babysitter }) => {
 
@@ -41,25 +43,30 @@ const Slots = ({ babysitter }) => {
 
     }
 
+    function card(slot) {
+        // let slotsArr = Object.values(slot => slot.day_of_week === 0)
+        return (<Card style={{ width: '18rem' }}>
+            <Card.Header>{dayToString(slot.day_of_week)}</Card.Header>
+            <ListGroup variant="info">
+                <ListGroup.Item>
+                    {(timeToString(slot.time_of_day))}
+                </ListGroup.Item>
+            </ListGroup>
+        </Card>
+        )
+    }
 
-    // let bigSlot = babysitter.slots.map(slot => slot)
+
     return (
-        <div>Test</div>
-        // <div>{bigSlot ? bigSlot: "didnt work"}</div>
+
+        <div>
+            {babysitter.slots.map(slot => { return (card(slot)) })}
+
+        </div>
     )
 
-
-
-    // let bigSlots = props.slots && props.slots.map(slot => slot)
-    // let times = Object.values(bigSlots.filter(data => data))
-    // return (
-    //     <div>
-    //         {times}
-    //     </div>
-    //     )
-    // slot {id: 7, day_of_week: 6, time_of_day: 2, babysitter_id: 1}
-
-    // console.log("slotBig is", slotBig)
+}
+export default Slots
 
 
 
@@ -68,24 +75,60 @@ const Slots = ({ babysitter }) => {
 
 
 
-    //     <div>
-    //     {console.log("this is slots", props.slots)}
-    //  {props.slots && props.slots.map(slot =>
-    //  console.log("this is slot", slot),
-    //  let slotsArr = Object.values(slot.filter(slot => slot.day_of_week === 0))
-    //  )}
-    // return(
 
-    //     </div>
-    //  )
 
-    //  return (
-    // <div>
-    {/* <Row className="slot-card-padding"> */ }
-    {/* idea #1 */ }
 
-    {/* Sunday */ }
-    {/* {props.slots && props.slots.map(slot => 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let bigSlots = props.slots && props.slots.map(slot => slot)
+// let times = Object.values(bigSlots.filter(data => data))
+// return (
+//     <div>
+//         {times}
+//     </div>
+//     )
+// slot {id: 7, day_of_week: 6, time_of_day: 2, babysitter_id: 1}
+
+// console.log("slotBig is", slotBig)
+
+
+
+
+
+
+
+
+//     <div>
+//     {console.log("this is slots", props.slots)}
+//  {props.slots && props.slots.map(slot =>
+//  console.log("this is slot", slot),
+//  let slotsArr = Object.values(slot.filter(slot => slot.day_of_week === 0))
+//  )}
+// return(
+
+//     </div>
+//  )
+
+//  return (
+// <div>
+{/* <Row className="slot-card-padding"> */ }
+{/* idea #1 */ }
+
+{/* Sunday */ }
+{/* {props.slots && props.slots.map(slot => 
                 {if (slot.day_of_week === 0) {
                 return(
                     <Card style={{ width: '18rem' }}>
@@ -100,8 +143,8 @@ const Slots = ({ babysitter }) => {
                 )
              }}
              )}  */}
-    {/* Monday */ }
-    {/* {props.slots && props.slots.map(slot =>
+{/* Monday */ }
+{/* {props.slots && props.slots.map(slot =>
                 {if (slot.day_of_week === 1) {
                 return(
                     <Card style={{ width: '18rem' }}>
@@ -116,8 +159,8 @@ const Slots = ({ babysitter }) => {
                 )
              }}
              )}  */}
-    {/* Tuesday */ }
-    {/* {props.slots && props.slots.map(slot =>
+{/* Tuesday */ }
+{/* {props.slots && props.slots.map(slot =>
                 {if (slot.day_of_week === 2) {
                 return(
                     <Card style={{ width: '18rem' }}>
@@ -133,8 +176,8 @@ const Slots = ({ babysitter }) => {
             }}
             )} */}
 
-    {/* Wednesday */ }
-    {/* {props.slots && props.slots.map(slot =>
+{/* Wednesday */ }
+{/* {props.slots && props.slots.map(slot =>
                 {if (slot.day_of_week === 3) {
                 return(
                     <Card style={{ width: '18rem' }}>
@@ -149,8 +192,8 @@ const Slots = ({ babysitter }) => {
                 )
              }}
              )} */}
-    {/* Thursday */ }
-    {/* {props.slots && props.slots.map(slot =>
+{/* Thursday */ }
+{/* {props.slots && props.slots.map(slot =>
                 {if (slot.day_of_week === 4) {
                 return(
                     <Card style={{ width: '18rem' }}>
@@ -165,8 +208,8 @@ const Slots = ({ babysitter }) => {
                 )
              }}
              )} */}
-    {/* Friday */ }
-    {/* {props.slots && props.slots.map(slot =>
+{/* Friday */ }
+{/* {props.slots && props.slots.map(slot =>
                 {if (slot.day_of_week === 5) {
                 return(
                     <Card style={{ width: '18rem' }}>
@@ -180,11 +223,11 @@ const Slots = ({ babysitter }) => {
                 )
              }}
              )} */}
-    {/* Saturday */ }
-    // return(
+{/* Saturday */ }
+// return(
 
 
-    {/*   timeToString(slot.time_of_day)
+{/*   timeToString(slot.time_of_day)
      
           }
                {if (slot.day_of_week === 6) { 
@@ -204,20 +247,20 @@ const Slots = ({ babysitter }) => {
              </div>
         )
              {/* end of idea #1 */}
-    {/* ) */ }
-    {/* </Row> */ }
+{/* ) */ }
+{/* </Row> */ }
 
 
-    {/* idea #2 */ }
-
-
-
-    {/* end of idea #2 */ }
+{/* idea #2 */ }
 
 
 
-}
+{/* end of idea #2 */ }
 
-export default Slots
+
+
+
+
+
 
 // const captionsPG = Object.values(state.all.filter(c => c.rating === "PG"))

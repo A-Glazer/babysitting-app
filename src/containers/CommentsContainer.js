@@ -5,7 +5,6 @@ import Comments from '../components/Comments'
 class CommentsContainer extends React.Component {
 
     render() {
-        // console.log(this.props.babysitter)
         return (
             <div>
                 <CommentInput babysitter={this.props.babysitter} />
