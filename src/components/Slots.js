@@ -38,34 +38,32 @@ const Slots = ({ babysitter }) => {
         } else if (time_of_day === 2) {
             return "Evening"
         }
-
     }
+
+    const theSlot = slot => slot.time_of_day.map(time => <div>{timeToString(time)}</div>)
 
     function card(slot) {
-        return (
-            <Row className="babyCard">
-                <CardDeck className="card-padding date-cards">
-                    <Card bg="light" style={{ width: '14rem' }}>
-                        <Card.Header>{dayToString(slot.day_of_week)}</Card.Header>
-                        <ListGroup variant="info">
-                            <ListGroup.Item>
-                                {slot.time_of_day.map(time =>
-                                    <div>{timeToString(time)}</div>)
-                                }
-                            </ListGroup.Item>
-                        </ListGroup>
-                    </Card>
-                </CardDeck>
-            </Row >
-
-        )
+        if (slot.time_of_day || slot.time_of_day.length > 0) {
+            return (
+                <Row className="babyCard">
+                    <CardDeck className="card-padding date-cards">
+                        <Card bg="light" style={{ width: '14rem' }}>
+                            <Card.Header>{dayToString(slot.day_of_week)}</Card.Header>
+                            <ListGroup variant="info">
+                                <ListGroup.Item>
+                                    {theSlot(slot)}
+                                    {/* {slot.time_of_day.map(time =><div>{timeToString(time)}</div>)} */}
+                                </ListGroup.Item>
+                            </ListGroup>
+                        </Card>
+                    </CardDeck>
+                </Row >
+            )
+        }
     }
-
-
     return (
-
         <div>
-            {babysitter.slots.map(slot => { return card(slot) })}
+            {babysitter.slots.map(slot => {return card(slot)})}
         </div>
     )
 

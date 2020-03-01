@@ -80,13 +80,11 @@ drop down menu for time_of_day (23 min expense tracker part 9)
 
 
 to do:
--create welcome page
--add design
--create navbar
--seed file is duplicating
+- remove duplicate time_of_day
+- design babysitter show page
+
 -add edit babysitter
--add edit slots
--add loading symbol
+
 
 bootstrap
 Cards - for each babysitter
@@ -96,3 +94,4 @@ Modal - for a delete pop up asking you if you want to delete
 Navbar
 buttons/overlays
 spinners - while loading a fetch
+

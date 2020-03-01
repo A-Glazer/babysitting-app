@@ -34,9 +34,7 @@ class BabysitterCard extends React.Component {
                                 pathname: `/babysitters/${id}`,
                                 state: { babysitter: this.props.babysitter }
                             }}>
-                                <Button>
-                                    {/* onClick={this.renderNewPage(props)}> */}
-                                    View Availability</Button>
+                                <Button>View Availability</Button>
                             </Link>
 
                         </Card.Body>

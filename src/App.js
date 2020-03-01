@@ -10,7 +10,7 @@ import { fetchBabysitters } from './actions/fetchBabysitters'
 
 class App extends React.Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchBabysitters()
 }
 
@@ -20,11 +20,8 @@ class App extends React.Component {
       <div className="App">
         <NavBar />
         <Switch>
-
           <Route path='/babysitters' component={BabysittersContainer} />
           <Route path='/' component={Home} />
-          
-
         </Switch>
       </div>
     );
