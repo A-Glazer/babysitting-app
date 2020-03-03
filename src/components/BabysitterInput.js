@@ -2,11 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addBabysitter } from '../actions/addBabysitter'
 import Flip from 'react-reveal/Flip';
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import Col from 'react-bootstrap/Col'
 import Fade from 'react-reveal/Fade';
-
+// import Form from 'react-bootstrap/Form'
+// import Button from 'react-bootstrap/Button'
+// import Col from 'react-bootstrap/Col'
 // import SlotInput from './SlotInput'
 
 class BabysitterInput extends React.Component {

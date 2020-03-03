@@ -3,8 +3,8 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import CardDeck from 'react-bootstrap/CardDeck'
 import { Link } from 'react-router-dom'
-import { Route, Switch } from 'react-router-dom'
-import BabysitterShow from './BabysitterShow'
+// import { Route, Switch } from 'react-router-dom'
+// import BabysitterShow from './BabysitterShow'
 
 
 class BabysitterCard extends React.Component {
@@ -16,6 +16,7 @@ class BabysitterCard extends React.Component {
 
 
     render() {
+        // debugger
         let { id, first_name, last_name, phone_number } = this.props.babysitter
 
         // let { id, first_name, last_name, phone_number} = this.props.babysitter 
@@ -29,10 +30,9 @@ class BabysitterCard extends React.Component {
                             <Card.Text>{phone_number ? phone_number : null}</Card.Text>
                             {/* <Button variant="outline-info" onClick={this.handleOnClick(this.props.babysitter)}>View Availability</Button>{' '} */}
 
-
                             <Link to={{
                                 pathname: `/babysitters/${id}`,
-                                state: { babysitter: this.props.babysitter }
+                                // state: { babysitter: this.props.babysitter }
                             }}>
                                 <Button>View Availability</Button>
                             </Link>

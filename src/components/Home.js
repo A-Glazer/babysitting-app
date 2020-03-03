@@ -1,5 +1,5 @@
 import React from 'react'
-import Babysitters from './Babysitters'
+// import Babysitters from './Babysitters'
 import Flip from 'react-reveal/Flip';
 import Carousel from 'react-bootstrap/Carousel'
 import babysitterWithKid from '../images/babysitterWithKid.jpg'

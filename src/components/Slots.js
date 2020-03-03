@@ -1,12 +1,12 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
 import CardDeck from 'react-bootstrap/CardDeck'
-import { Link } from 'react-router-dom'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Row from 'react-bootstrap/Row'
-import { render } from '@testing-library/react'
-import Col from 'react-bootstrap/Col'
+// import Button from 'react-bootstrap/Button'
+// import { Link } from 'react-router-dom'
+// import { render } from '@testing-library/react'
+// import Col from 'react-bootstrap/Col'
 
 
 const Slots = ({ babysitter }) => {

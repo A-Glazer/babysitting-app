@@ -1,5 +1,5 @@
 
-export default function babysitterReducer(state = { babysitters: [], loading: false }, action) {
+export default function babysitterReducer(state = { babysitters: [], loading: true }, action) {
 
     switch (action.type) {
         case 'LOADING_BABYSITTERS':
@@ -42,7 +42,10 @@ export default function babysitterReducer(state = { babysitters: [], loading: fa
         case 'ADD_SLOT': 
         let sitter = state.babysitters.filter(baby => baby.id === action.payload.id)
             console.log("sitter", sitter[0])
-            return { ...state, babysitters: sitter[0] }
+            return { ...state, 
+                babysitters: sitter[0],
+                loading: false 
+            }
 
 
 

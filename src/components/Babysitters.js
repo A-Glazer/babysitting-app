@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import BabysitterShow from './BabysitterShow'
 import BabysitterCard from './BabysitterCard'
-// import { Container, Row, Col } from 'reactstrap';
 import Row from 'react-bootstrap/Row'
 import Flip from 'react-reveal/Flip'
 import Button from 'react-bootstrap/Button'
+// import BabysitterShow from './BabysitterShow'
+// import { Container, Row, Col } from 'reactstrap';
 
 const Babysitters = ({ babysitters }) => {
     let babysitterCards = babysitters.map(baby => {
-
+        // debugger
         return (
             <div key={baby.id}>
                 <BabysitterCard babysitter={baby} />

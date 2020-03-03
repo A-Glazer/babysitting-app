@@ -2,16 +2,20 @@ import React from 'react'
 import CommentsContainer from '../containers/CommentsContainer'
 import SlotsContainer from '../containers/SlotsContainer'
 import Flip from 'react-reveal/Flip';
+import {connect} from 'react-redux'
 
-// import {Redirect} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 // import Card from 'react-bootstrap/Card'
 // import Button from 'react-bootstrap/Button'
 
 
 const BabysitterShow = (props) => {
-
-    console.log("babysitter on babysitter show", props)
-    let babysitter = props.babysitters.filter(baby => baby.id == props.match.params.id)[0]
+    const {id} = useParams()
+    // let babysitter = props.babysitters
+    let babysitter = props.babysitters.find(baby => baby.id == id)
+    // console.log("babysitter on babysitter show", props)
+    
+    
     return (
         <div>
             <Flip left>
@@ -23,6 +27,15 @@ const BabysitterShow = (props) => {
             <u>Comments: </u><CommentsContainer babysitter={babysitter} />
         </div>
     )
+    
 }
 
-export default BabysitterShow
+const mapStateToProps = state => {
+    return {
+        babysitters: state.babysitters,
+        loading: state.loading
+    }
+}
+
+
+export default connect(mapStateToProps)(BabysitterShow)

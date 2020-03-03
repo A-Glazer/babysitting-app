@@ -1,7 +1,7 @@
 export const addSlot = (slot, babysitter) => {
 
-    let babysitterId = babysitter.id
     return (dispatch) => {
+    let babysitterId = babysitter.id
         console.log("addSlot", slot)
         fetch(`http://localhost:3000/api/v1/babysitters/${babysitterId}/slots`, {
             method: 'POST',
