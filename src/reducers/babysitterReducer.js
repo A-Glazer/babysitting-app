@@ -39,15 +39,21 @@ export default function babysitterReducer(state = { babysitters: [], loading: tr
                 })
             }
 
-        case 'ADD_SLOT': 
-        let sitter = state.babysitters.filter(baby => baby.id === action.payload.id)
-            console.log("sitter", sitter[0])
-            return { ...state, 
-                babysitters: sitter[0],
-                loading: false 
+        case 'ADD_SLOT':
+            let updatedBabysitters = [...state.babysitters]
+            let newSitter = updatedBabysitters.find(baby => baby.id === action.payload.id)
+            let index = updatedBabysitters.findIndex(baby => (baby === newSitter))
+            // debugger
+            updatedBabysitters[index] = (action.payload)
+           
+            // updatedBabysitters = [...state.babysitters, newSitterUpdate]
+            console.log("newSitter", newSitter)
+            console.log("updatedBabysitters", updatedBabysitters)
+            return {
+                ...state,
+                babysitters: updatedBabysitters,
+                loading: false
             }
-
-
 
         default:
             return state
