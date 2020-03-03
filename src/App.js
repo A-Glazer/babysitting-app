@@ -6,6 +6,7 @@ import Home from './components/Home'
 import { Route, Switch } from 'react-router-dom'
 import { NavBar } from './components/NavBar'
 import { fetchBabysitters } from './actions/fetchBabysitters'
+import BabysitterShow from './components/BabysitterShow';
 
 
 class App extends React.Component {
@@ -22,6 +23,7 @@ class App extends React.Component {
         <Switch>
           <Route path='/babysitters' component={BabysittersContainer} />
           <Route path='/' component={Home} />
+          <Route path='/babysitters/:id' component={BabysitterShow}/>
         </Switch>
       </div>
     );

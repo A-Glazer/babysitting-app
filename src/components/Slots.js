@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row'
 import { render } from '@testing-library/react'
 import Col from 'react-bootstrap/Col'
 
+
 const Slots = ({ babysitter }) => {
 
     console.log("this is props", babysitter)
@@ -65,7 +66,7 @@ const Slots = ({ babysitter }) => {
     return (
         <div>
             {/* {console.log("babysitter", babysitter)} */}
-            {babysitter.slots.map(slot => {return card(slot)})}
+            {babysitter && babysitter.slots.map(slot => {return card(slot)})}
         </div>
     )
 
