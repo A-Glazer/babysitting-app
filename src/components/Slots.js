@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/Col'
 
 const Slots = ({ babysitter }) => {
 
-    console.log("this is props", babysitter)
+    console.log("this is babysitter on own", babysitter)
 
     function dayToString(day_of_week) {
         if (day_of_week === 0) {
@@ -41,10 +41,24 @@ const Slots = ({ babysitter }) => {
         }
     }
 
-    const theSlot = slot => slot.time_of_day.map(time => <div>{timeToString(time)}</div>)
+    function theSlot(slot) {
+        if (slot.time_of_day) {
+            return <div>{slot.time_of_day.map(time => {
+                if (time === 0) {
+                    return <li>Morning</li>
+                } else if (time === 1) {
+                    return <li>Afternoon</li>
+                } else if (time === 2) {
+                    return <li>Evening</li>
+                }
+            }
+            )}</div>
+        }
+    }
 
     function card(slot) {
         // if (slot.time_of_day || slot.time_of_day.length > 0) {
+        // if (slot.time_of_day.length > 0) {
         return (
             <Row className="babyCard">
                 <CardDeck className="card-padding date-cards">
@@ -53,7 +67,6 @@ const Slots = ({ babysitter }) => {
                         <ListGroup variant="info">
                             <ListGroup.Item>
                                 {theSlot(slot)}
-                                {/* {slot.time_of_day.map(time =><div>{timeToString(time)}</div>)} */}
                             </ListGroup.Item>
                         </ListGroup>
                     </Card>
@@ -65,8 +78,7 @@ const Slots = ({ babysitter }) => {
 
     return (
         <div>
-            {/* {console.log("babysitter", babysitter)} */}
-            {babysitter && babysitter.slots.map(slot => {return card(slot)})}
+            {babysitter && babysitter.slots.map(slot => { return card(slot) })}
         </div>
     )
 

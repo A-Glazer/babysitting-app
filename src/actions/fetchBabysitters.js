@@ -35,7 +35,6 @@ export const slotMerge = babyData => {
             },
         ]
         for (const slot of babysitter.slots) {
-            console.log("slot", slot)
             if (allSlots[slot.day_of_week] && allSlots[slot.day_of_week].time_of_day !== slot.time_of_day) {
                 allSlots[slot.day_of_week].time_of_day.push(slot.time_of_day)
             }

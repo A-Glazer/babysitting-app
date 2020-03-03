@@ -1,5 +1,6 @@
-export const addSlot = (slot, babysitterId) => {
+export const addSlot = (slot, babysitter) => {
 
+    let babysitterId = babysitter.id
     return (dispatch) => {
         console.log("addSlot", slot)
         fetch(`http://localhost:3000/api/v1/babysitters/${babysitterId}/slots`, {

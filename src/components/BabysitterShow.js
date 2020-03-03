@@ -10,8 +10,8 @@ import Flip from 'react-reveal/Flip';
 
 const BabysitterShow = (props) => {
 
+    console.log("babysitter on babysitter show", props)
     let babysitter = props.babysitters.filter(baby => baby.id == props.match.params.id)[0]
-    // console.log("babysitter on babysitter show", props)
     return (
         <div>
             <Flip left>

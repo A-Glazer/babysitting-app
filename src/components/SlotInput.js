@@ -16,9 +16,17 @@ class SlotInput extends React.Component {
 
     }
 
+    validateForm(event){
+        if (event.target.day_of_week.value === 'Select Day' || event.target.day_of_week.value === '' || event.target.time_of_day.value === '' || event.target.time_of_day.value === 'Select Time' ) {
+            alert("Please select a day and time")
+            
+        }
+    }
+
     handleOnSubmit = event => {
         event.preventDefault()
-        this.props.addSlot(this.state, this.props.babysitter.id)
+        this.validateForm(event)
+        this.props.addSlot(this.state, this.props.babysitter)
         this.setState({
             day_of_week: '',
             time_of_day: ''
@@ -30,7 +38,7 @@ class SlotInput extends React.Component {
             <div>
                 <form onSubmit={this.handleOnSubmit}>
                     <label>Day Availability: </label>
-                    <select name="day_of_week" value={this.state.day_of_week} onChange={this.handleOnChange}>
+                    <select name="day_of_week" value={this.state.day_of_week} onChange={this.handleOnChange} required min="0" max="6">
                         <option>Select Day</option>
                         <option value="0" key={0}>Sunday</option>
                         <option value="1" key={1}>Monday</option>
@@ -41,7 +49,7 @@ class SlotInput extends React.Component {
                         <option value="6" key={6}>Saturday</option>
                     </select>
                     <label>Time Availability: </label>
-                    <select name="time_of_day" value={this.state.time_of_day} onChange={this.handleOnChange}>
+                    <select name="time_of_day" value={this.state.time_of_day} onChange={this.handleOnChange} required min="0" max="2">
                         {/* need to iterate over times */}
                         <option>Select Time</option>
                         <option value="0" key={0}>Morning</option>
