@@ -43,231 +43,31 @@ const Slots = ({ babysitter }) => {
     const theSlot = slot => slot.time_of_day.map(time => <div>{timeToString(time)}</div>)
 
     function card(slot) {
-        if (slot.time_of_day || slot.time_of_day.length > 0) {
-            return (
-                <Row className="babyCard">
-                    <CardDeck className="card-padding date-cards">
-                        <Card bg="light" style={{ width: '14rem' }}>
-                            <Card.Header>{dayToString(slot.day_of_week)}</Card.Header>
-                            <ListGroup variant="info">
-                                <ListGroup.Item>
-                                    {theSlot(slot)}
-                                    {/* {slot.time_of_day.map(time =><div>{timeToString(time)}</div>)} */}
-                                </ListGroup.Item>
-                            </ListGroup>
-                        </Card>
-                    </CardDeck>
-                </Row >
-            )
-        }
+        // if (slot.time_of_day || slot.time_of_day.length > 0) {
+        return (
+            <Row className="babyCard">
+                <CardDeck className="card-padding date-cards">
+                    <Card bg="light" style={{ width: '14rem' }}>
+                        <Card.Header>{dayToString(slot.day_of_week)}</Card.Header>
+                        <ListGroup variant="info">
+                            <ListGroup.Item>
+                                {theSlot(slot)}
+                                {/* {slot.time_of_day.map(time =><div>{timeToString(time)}</div>)} */}
+                            </ListGroup.Item>
+                        </ListGroup>
+                    </Card>
+                </CardDeck>
+            </Row >
+        )
+        // }
     }
+
     return (
         <div>
+            {/* {console.log("babysitter", babysitter)} */}
             {babysitter.slots.map(slot => {return card(slot)})}
         </div>
     )
 
 }
 export default Slots
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let bigSlots = props.slots && props.slots.map(slot => slot)
-// let times = Object.values(bigSlots.filter(data => data))
-// return (
-//     <div>
-//         {times}
-//     </div>
-//     )
-// slot {id: 7, day_of_week: 6, time_of_day: 2, babysitter_id: 1}
-
-// console.log("slotBig is", slotBig)
-
-
-
-
-
-
-
-
-//     <div>
-//     {console.log("this is slots", props.slots)}
-//  {props.slots && props.slots.map(slot =>
-//  console.log("this is slot", slot),
-//  let slotsArr = Object.values(slot.filter(slot => slot.day_of_week === 0))
-//  )}
-// return(
-
-//     </div>
-//  )
-
-//  return (
-// <div>
-{/* <Row className="slot-card-padding"> */ }
-{/* idea #1 */ }
-
-{/* Sunday */ }
-{/* {props.slots && props.slots.map(slot => 
-                {if (slot.day_of_week === 0) {
-                return(
-                    <Card style={{ width: '18rem' }}>
-                    <Card.Header>Sunday</Card.Header>
-                    <ListGroup variant="info">
-                    <ListGroup.Item>
-                    {(timeToString(slot.time_of_day))}
-                        </ListGroup.Item>
-                    
-                </ListGroup>
-                </Card>
-                )
-             }}
-             )}  */}
-{/* Monday */ }
-{/* {props.slots && props.slots.map(slot =>
-                {if (slot.day_of_week === 1) {
-                return(
-                    <Card style={{ width: '18rem' }}>
-                    <Card.Header>Monday</Card.Header>
-                    <ListGroup variant="info">
-                    <ListGroup.Item>
-                    {(timeToString(slot.time_of_day))}
-                        </ListGroup.Item>
-                    
-                </ListGroup>
-                </Card>
-                )
-             }}
-             )}  */}
-{/* Tuesday */ }
-{/* {props.slots && props.slots.map(slot =>
-                {if (slot.day_of_week === 2) {
-                return(
-                    <Card style={{ width: '18rem' }}>
-                    <Card.Header>Tueday</Card.Header>
-                    <ListGroup variant="info">
-                    <ListGroup.Item>
-                    {(timeToString(slot.time_of_day))}
-                        </ListGroup.Item>
-                    
-                </ListGroup>
-                </Card>
-                )
-            }}
-            )} */}
-
-{/* Wednesday */ }
-{/* {props.slots && props.slots.map(slot =>
-                {if (slot.day_of_week === 3) {
-                return(
-                    <Card style={{ width: '18rem' }}>
-                    <Card.Header>Wednesday</Card.Header>
-                    <ListGroup variant="info">
-                    <ListGroup.Item>
-                    {(timeToString(slot.time_of_day))}
-                        </ListGroup.Item>
-                    
-                </ListGroup>
-                </Card>
-                )
-             }}
-             )} */}
-{/* Thursday */ }
-{/* {props.slots && props.slots.map(slot =>
-                {if (slot.day_of_week === 4) {
-                return(
-                    <Card style={{ width: '18rem' }}>
-                    <Card.Header>Thursday</Card.Header>
-                    <ListGroup variant="info">
-                    <ListGroup.Item>
-                    {(timeToString(slot.time_of_day))}
-                        </ListGroup.Item>
-                    
-                </ListGroup>
-                </Card>
-                )
-             }}
-             )} */}
-{/* Friday */ }
-{/* {props.slots && props.slots.map(slot =>
-                {if (slot.day_of_week === 5) {
-                return(
-                    <Card style={{ width: '18rem' }}>
-                    <Card.Header>Friday</Card.Header>
-                    <ListGroup variant="info">
-                    <ListGroup.Item>
-                    {(timeToString(slot.time_of_day))}
-                        </ListGroup.Item>
-                </ListGroup>
-                </Card>
-                )
-             }}
-             )} */}
-{/* Saturday */ }
-// return(
-
-
-{/*   timeToString(slot.time_of_day)
-     
-          }
-               {if (slot.day_of_week === 6) { 
-            //     return(
-            //         <Card style={{ width: '18rem' }}>
-            //         <Card.Header>Saturday</Card.Header>
-            //         <ListGroup variant="info">
-            //         <ListGroup.Item>
-            //         {(timeToString(slot.time_of_day))}
-            //             </ListGroup.Item>
-                    
-            //     </ListGroup>
-            //     </Card>
-            //     )
-            //  }}
-            //  )}
-             </div>
-        )
-             {/* end of idea #1 */}
-{/* ) */ }
-{/* </Row> */ }
-
-
-{/* idea #2 */ }
-
-
-
-{/* end of idea #2 */ }
-
-
-
-
-
-
-
-// const captionsPG = Object.values(state.all.filter(c => c.rating === "PG"))

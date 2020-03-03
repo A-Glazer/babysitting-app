@@ -35,7 +35,8 @@ export const slotMerge = babyData => {
             },
         ]
         for (const slot of babysitter.slots) {
-            if (allSlots[slot.day_of_week].time_of_day !== slot.time_of_day) {
+            console.log("slot", slot)
+            if (allSlots[slot.day_of_week] && allSlots[slot.day_of_week].time_of_day !== slot.time_of_day) {
                 allSlots[slot.day_of_week].time_of_day.push(slot.time_of_day)
             }
         }
@@ -48,8 +49,9 @@ export function fetchBabysitters() {
         dispatch({ type: 'LOADING_BABYSITTERS' })
         try {
             const res = await fetch('http://localhost:3000/api/v1/babysitters')
+            console.log(res)
             if (!res.ok) {
-                throw res
+                throw console.log(res)
             }
             const babyData = await res.json()
 
@@ -58,6 +60,7 @@ export function fetchBabysitters() {
 
             dispatch(getBabysitters(slotArr))
         } catch (err) {
+            console.log(err)
             alert("Failed to load babysitters")
         }
     }

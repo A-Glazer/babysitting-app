@@ -51,8 +51,3 @@ class BabysitterCard extends React.Component {
 
 
 export default BabysitterCard
-
-
-// <u>Slots: </u><SlotsContainer babysitter={babysitter} />
-// <br/>
-// <u>Comments: </u><CommentsContainer babysitter={babysitter}/>

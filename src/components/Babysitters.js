@@ -4,21 +4,19 @@ import { Link } from 'react-router-dom'
 import BabysitterCard from './BabysitterCard'
 // import { Container, Row, Col } from 'reactstrap';
 import Row from 'react-bootstrap/Row'
-import Flip from 'react-reveal/Flip';
+import Flip from 'react-reveal/Flip'
 import Button from 'react-bootstrap/Button'
 
 const Babysitters = ({ babysitters }) => {
     let babysitterCards = babysitters.map(baby => {
 
         return (
-            <div>
-                <BabysitterCard key={baby.id} babysitter={baby} />
+            <div key={baby.id}>
+                <BabysitterCard babysitter={baby} />
                 <br />
             </div>
         )
-
     })
-
 
     return (
         <div>

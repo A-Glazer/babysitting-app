@@ -34,7 +34,7 @@ class SlotsContainer extends React.Component {
         if (this.props.loading) {
             return this.handleLoading()
         } else {
-            console.log("this is slots", this.props.babysitters)
+            console.log("this is slots", this.props.babysitter)
             return (
                 <div>
                     <SlotInput babysitter={this.props.babysitter} />
