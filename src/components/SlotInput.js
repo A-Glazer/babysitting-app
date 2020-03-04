@@ -50,7 +50,6 @@ class SlotInput extends React.Component {
                     </select>
                     <label>Time Availability: </label>
                     <select name="time_of_day" value={this.state.time_of_day} onChange={this.handleOnChange} required min="0" max="2">
-                        {/* need to iterate over times */}
                         <option>Select Time</option>
                         <option value="0" key={0}>Morning</option>
                         <option value="1" key={1}> Afternoon</option>

@@ -47,8 +47,8 @@ export default function babysitterReducer(state = { babysitters: [], loading: tr
             updatedBabysitters[index] = (action.payload)
            
             // updatedBabysitters = [...state.babysitters, newSitterUpdate]
-            console.log("newSitter", newSitter)
-            console.log("updatedBabysitters", updatedBabysitters)
+            // console.log("newSitter", newSitter)
+            // console.log("updatedBabysitters", updatedBabysitters)
             return {
                 ...state,
                 babysitters: updatedBabysitters,

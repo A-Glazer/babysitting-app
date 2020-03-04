@@ -27,7 +27,7 @@ class BabysittersContainer extends React.Component {
         } else {
             return (
                 <div>
-                    {console.log("this.props", this.props)}
+                    {/* {console.log("this.props", this.props)} */}
                     <Switch>
                         <Route path='/babysitters/new' component={BabysitterInput} />
                         <Route path='/babysitters/:id' render={(routerProps) =>

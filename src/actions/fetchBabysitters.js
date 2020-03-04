@@ -48,17 +48,17 @@ export function fetchBabysitters() {
         dispatch({ type: 'LOADING_BABYSITTERS' })
         try {
             const res = await fetch('http://localhost:3000/api/v1/babysitters')
-            console.log("res 1", res)
+            // console.log("res 1", res)
             if (!res.ok) {
                 throw console.log(res)
             }
             const babyData = await res.json()
 
             const slotArr = slotMerge(babyData)
-            console.log("This is slotArr", slotArr)
+            // console.log("This is slotArr", slotArr)
 
             let response = getBabysitters(slotArr)
-            console.log("response 3", response)
+            // console.log("response 3", response)
             dispatch(response)
         } catch (err) {
             console.log(err)

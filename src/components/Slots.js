@@ -13,7 +13,16 @@ const Slots = ({ babysitter }) => {
 
     console.log("this is babysitter on own", babysitter)
 
+    return (
+        <div>
+            {console.log("babysitter test", babysitter)}
+            {babysitter.slots.map(slot => { return card(slot) })}
+            {/* {babysitter && babysitter.slots.map(slot => { return card(slot) })} */}
+        </div>
+    )
+
     function dayToString(day_of_week) {
+        console.log("dayToString", day_of_week)
         if (day_of_week === 0) {
             return "Sunday"
         } else if (day_of_week === 1) {
@@ -32,6 +41,9 @@ const Slots = ({ babysitter }) => {
     }
 
     function timeToString(time_of_day) {
+        // debugger
+        
+        console.log("timeToString", time_of_day)
         if (time_of_day === 0) {
             return "Morning"
         } else if (time_of_day === 1) {
@@ -41,24 +53,11 @@ const Slots = ({ babysitter }) => {
         }
     }
 
-    function theSlot(slot) {
-        if (slot.time_of_day) {
-            return <div>{slot.time_of_day.map(time => {
-                if (time === 0) {
-                    return <li>Morning</li>
-                } else if (time === 1) {
-                    return <li>Afternoon</li>
-                } else if (time === 2) {
-                    return <li>Evening</li>
-                }
-            }
-            )}</div>
-        }
-    }
-
     function card(slot) {
         // if (slot.time_of_day || slot.time_of_day.length > 0) {
         // if (slot.time_of_day.length > 0) {
+            // debugger
+        console.log("card slot", slot)
         return (
             <Row className="babyCard">
                 <CardDeck className="card-padding date-cards">
@@ -66,7 +65,9 @@ const Slots = ({ babysitter }) => {
                         <Card.Header>{dayToString(slot.day_of_week)}</Card.Header>
                         <ListGroup variant="info">
                             <ListGroup.Item>
-                                {theSlot(slot)}
+                                {/* {timeToString(slot.time_of_day)} */}
+                                {/* {slot.time_of_day.map(time => <li>{timeToString(time)}</li>)} */}
+                                {theSlot(slot.time_of_day)}
                             </ListGroup.Item>
                         </ListGroup>
                     </Card>
@@ -76,11 +77,23 @@ const Slots = ({ babysitter }) => {
         // }
     }
 
-    return (
-        <div>
-            {babysitter && babysitter.slots.map(slot => { return card(slot) })}
+    function theSlot(time_of_day) {
+        console.log("theSlot", time_of_day)
+        // let slot = babysitter.slots.map(slot => slot)
+        // {babysitter.slots.map(slot => { return card(slot) })}
+        // if (slot.time_of_day) {
+        return <div>{time_of_day.map(time => {
+            if (time === 0) {
+                return <li>Morning</li>
+            } else if (time === 1) {
+                return <li>Afternoon</li>
+            } else if (time === 2) {
+                return <li>Evening</li>
+            }
+        })
+        }
         </div>
-    )
-
+    }
 }
+
 export default Slots

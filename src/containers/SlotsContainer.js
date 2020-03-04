@@ -8,31 +8,10 @@ import { connect } from 'react-redux'
 
 class SlotsContainer extends React.Component {
 
-    constructor(props) {
-        super(props)
-    }
-
-    // handleLoading = () => {
-    //     if (this.props.loading) {
-    //         return (
-    //             <div>
-    //                 <Spinner animation="border" role="status">
-    //                     <span className="sr-only">Loading...</span>
-    //                 </Spinner>
-    //             </div>)
-    //     }else {
-    //     
-    //         return (
-    //             <div>
-    //                 <SlotInput babysitter={this.props.babysitter} />
-    //                 <Slots babysitter={this.props.babysitter} />
-    //             </div>
-    //         )
-    //     }
-    // }
-
     render() {
         if (this.props.loading) {
+            console.log("loading is true")
+            // debugger
             return (
                 <div>
                     <Spinner animation="border" role="status">
@@ -41,6 +20,7 @@ class SlotsContainer extends React.Component {
                 </div>)
         }else {
             // debugger
+            console.log("loading is false")
             return (
                 <div>
                     <SlotInput babysitter={this.props.babysitter} />
@@ -48,17 +28,6 @@ class SlotsContainer extends React.Component {
                 </div>
             )
         }
-        // if (this.props.loading) {
-        //     return this.handleLoading()
-        // } else {
-        //     console.log("this is slots", this.props.babysitter)
-        //     return (
-        //         <div>
-        //             <SlotInput babysitter={this.props.babysitter} />
-        //             <Slots babysitter={this.props.babysitter} />
-        //         </div>
-        //     )
-        // }
     }
 }
 
