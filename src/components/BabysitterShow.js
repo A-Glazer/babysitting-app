@@ -1,5 +1,5 @@
 import React from 'react'
-import CommentsContainer from '../containers/CommentsContainer'
+// import CommentsContainer from '../containers/CommentsContainer'
 import SlotsContainer from '../containers/SlotsContainer'
 import Flip from 'react-reveal/Flip';
 import {connect} from 'react-redux'
@@ -23,8 +23,8 @@ const BabysitterShow = (props) => {
             </Flip>
             <h4>{babysitter ? babysitter.phone_number : null}</h4>
             <u>Slots: </u><SlotsContainer babysitter={babysitter} />
-            <br />
-            <u>Comments: </u><CommentsContainer babysitter={babysitter} />
+            {/* <br /> */}
+            {/* <u>Comments: </u><CommentsContainer babysitter={babysitter} /> */}
         </div>
     )
     
