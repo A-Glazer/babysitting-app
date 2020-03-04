@@ -78,3 +78,10 @@
   width: 30%;
   padding: 10px;
 }
+
+.addSpace {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* padding-right: 10px; */
+  padding-left: 15px;
+}
