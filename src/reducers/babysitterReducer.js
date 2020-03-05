@@ -56,19 +56,23 @@ export default function babysitterReducer(state = { babysitters: [], loading: tr
             }
 
         case "DELETE_SLOT":
-        //    let originalUrl = action.payload.url
-        //    let middleUrl = originalUrl.slice(0, originalUrl.lastIndexOf("/"))
-        //    let lastUrl = middleUrl.slice(0, middleUrl.lastIndexOf("/"))
-        //    let babyId = lastUrl.substring(lastUrl.lastIndexOf("/") + 1)
-        //    let index =  state.babysitters.findIndex(baby => baby.id == babyId)
-          
-            debugger
-           // const slots = "test" 
-            return { ...state }
-         
-        // const s = "your_string";
-        // const withoutLastChunk = s.slice(0, s.lastIndexOf("_"));
-        // console.log(withoutLastChunk);
+            //    {id: 51, day_of_week: 0, time_of_day: 0, babysitter_id: 3}
+            let otherBabysitters = [...state.babysitters]
+            let babysitter = otherBabysitters.filter(babysitter => babysitter.id == action.payload.babysitter_id)
+            let slotIndex = babysitter[0].slots.findIndex(slot => slot.day_of_week === action.payload.day_of_week)
+            // console.log("babysitter", babysitter)
+            // console.log("action.payload.id", action.payload)
+            // console.log("babysitter[0].slots", babysitter[0].slots)
+            // debugger
+            // find day of week and delete slot in day of week
+            babysitter[0].slots.splice(slotIndex, 1)
+            // console.log("new", babysitter[0].slots)
+            // const slots = "test" 
+            return {
+                ...state,
+                babysitter: babysitter
+            }
+
 
         default:
             return state

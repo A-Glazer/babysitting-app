@@ -9,10 +9,11 @@ export const deleteSlot = (slot, babysitter) => {
             },
             body: JSON.stringify(slot)
         })
-            // .then(response => response.json())
+            .then(response => response.json())
             .then(babysitter => {
                 // debugger
-                dispatch({ type: 'DELETE_SLOT', babysitter })
+                console.log("babysitter", babysitter)
+                dispatch({ type: 'DELETE_SLOT', payload: babysitter })
                 
             })
         // }

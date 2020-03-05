@@ -83,8 +83,8 @@ to do:
 - remove duplicate time_of_day
 - only show slot card if time_of_day 
 - add edit babysitter
--delete slot
-- work on comments
+- delete slot - rerender afterwards
+(- work on comments)
 
 
 bootstrap
