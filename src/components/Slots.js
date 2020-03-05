@@ -26,7 +26,7 @@ const Slots = ({ babysitter, deleteSlot }) => {
     )
 
     function dayToString(day_of_week) {
-        console.log("dayToString", day_of_week)
+        // console.log("dayToString", day_of_week)
         if (day_of_week === 0) {
             return "Sunday"
         } else if (day_of_week === 1) {
@@ -47,7 +47,7 @@ const Slots = ({ babysitter, deleteSlot }) => {
     function timeToString(time_of_day) {
         // debugger
 
-        console.log("timeToString", time_of_day)
+        // console.log("timeToString", time_of_day)
         if (time_of_day === 0) {
             return "Morning"
         } else if (time_of_day === 1) {
@@ -57,13 +57,12 @@ const Slots = ({ babysitter, deleteSlot }) => {
         }
     }
 
-    function removeSlot(slot, babysitter) {
-        debugger
+    function removeSlot(slot, babysitter) {       
         deleteSlot(slot, babysitter)
     }
 
     function card(slot) {
-        console.log("card slot", slot)
+        // console.log("card slot", slot)
         return (
             <Row className="babyCard">
                 <CardDeck className="card-padding date-cards">
@@ -87,11 +86,11 @@ const Slots = ({ babysitter, deleteSlot }) => {
     function theSlot(time_of_day) {
         console.log("theSlot", time_of_day)
         return <div>{time_of_day.map(time => {
-            if (time === 0) {
+            if (time.time === 0) {
                 return <li>Morning</li>
-            } else if (time === 1) {
+            } else if (time.time === 1) {
                 return <li>Afternoon</li>
-            } else if (time === 2) {
+            } else if (time.time === 2) {
                 return <li>Evening</li>
             }
         })

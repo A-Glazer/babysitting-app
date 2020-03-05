@@ -13,7 +13,7 @@ import { useParams } from 'react-router-dom'
 const BabysitterShow = (props) => {
     const { id } = useParams()
     let babysitter = props.babysitters.find(baby => baby.id == id)
-    console.log("props on show", props)
+    // console.log("props on show", props)
 
     return (
         <div>

@@ -10,7 +10,7 @@ export default function babysitterReducer(state = { babysitters: [], loading: tr
             }
 
         case 'FETCH_BABYSITTERS':
-            console.log("action.payload", action.payload)
+            // console.log("action.payload", action.payload)
             return { babysitters: action.payload, loading: false }
 
 
@@ -25,8 +25,8 @@ export default function babysitterReducer(state = { babysitters: [], loading: tr
         //     const otherBabysitters = state.babysitters.filter(baby => baby !== action.payload)
         //     return {...state, otherBabysitters}
 
-        
-            // case 'ADD_COMMENT':
+
+        // case 'ADD_COMMENT':
         //     return {
         //         ...state, babysitters: state.babysitters.map(baby => {
         //             if (baby.id === action.payload.id) {
@@ -56,9 +56,19 @@ export default function babysitterReducer(state = { babysitters: [], loading: tr
             }
 
         case "DELETE_SLOT":
+        //    let originalUrl = action.payload.url
+        //    let middleUrl = originalUrl.slice(0, originalUrl.lastIndexOf("/"))
+        //    let lastUrl = middleUrl.slice(0, middleUrl.lastIndexOf("/"))
+        //    let babyId = lastUrl.substring(lastUrl.lastIndexOf("/") + 1)
+        //    let index =  state.babysitters.findIndex(baby => baby.id == babyId)
+          
             debugger
-            // const slots = "test" 
-            return {...state}
+           // const slots = "test" 
+            return { ...state }
+         
+        // const s = "your_string";
+        // const withoutLastChunk = s.slice(0, s.lastIndexOf("_"));
+        // console.log(withoutLastChunk);
 
         default:
             return state
