@@ -21,7 +21,12 @@ export default function babysitterReducer(state = { babysitters: [], loading: tr
                 loading: false
             }
 
-        // case 'ADD_COMMENT':
+        // case 'DELETE_BABYSITTER':
+        //     const otherBabysitters = state.babysitters.filter(baby => baby !== action.payload)
+        //     return {...state, otherBabysitters}
+
+        
+            // case 'ADD_COMMENT':
         //     return {
         //         ...state, babysitters: state.babysitters.map(baby => {
         //             if (baby.id === action.payload.id) {

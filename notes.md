@@ -82,8 +82,8 @@ drop down menu for time_of_day (23 min expense tracker part 9)
 to do:
 - remove duplicate time_of_day
 - only show slot card if time_of_day 
-- design babysitter show page
 - add edit babysitter
+-delete slot
 - work on comments
 
 

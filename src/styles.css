@@ -85,3 +85,11 @@
   /* padding-right: 10px; */
   padding-left: 15px;
 }
+
+.reset-button{
+  margin-top: 20px ;
+  float: center;
+  /* width: 50%; */
+  font-size: small;
+
+}

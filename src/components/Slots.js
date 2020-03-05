@@ -11,11 +11,12 @@ import Row from 'react-bootstrap/Row'
 
 const Slots = ({ babysitter }) => {
 
-    console.log("this is babysitter on own", babysitter)
-
+    // {debugger}
     return (
         <div>
-            {console.log("babysitter test", babysitter)}
+            {/* {let allSlot = babysitter.slots}
+            {let slotSet = [...new Set(allSlot)]
+            return slotSet */}
             {babysitter.slots.map(slot => { return card(slot) })}
             {/* {babysitter && babysitter.slots.map(slot => { return card(slot) })} */}
         </div>
@@ -42,7 +43,7 @@ const Slots = ({ babysitter }) => {
 
     function timeToString(time_of_day) {
         // debugger
-        
+
         console.log("timeToString", time_of_day)
         if (time_of_day === 0) {
             return "Morning"
@@ -53,10 +54,11 @@ const Slots = ({ babysitter }) => {
         }
     }
 
+    function removeSlot() {
+        
+    }
+
     function card(slot) {
-        // if (slot.time_of_day || slot.time_of_day.length > 0) {
-        // if (slot.time_of_day.length > 0) {
-            // debugger
         console.log("card slot", slot)
         return (
             <Row className="babyCard">
@@ -65,11 +67,12 @@ const Slots = ({ babysitter }) => {
                         <Card.Header>{dayToString(slot.day_of_week)}</Card.Header>
                         <ListGroup variant="info">
                             <ListGroup.Item>
-                                {/* {timeToString(slot.time_of_day)} */}
-                                {/* {slot.time_of_day.map(time => <li>{timeToString(time)}</li>)} */}
                                 {theSlot(slot.time_of_day)}
+                            <button variant="link" size="sm" className="reset-button" onClick={removeSlot()}>Reset {dayToString(slot.day_of_week)}</button>
                             </ListGroup.Item>
                         </ListGroup>
+                        {/* <Card.Footer className="text-muted reset-button"> */}
+                        {/* </Card.Footer> */}
                     </Card>
                 </CardDeck>
             </Row >
@@ -79,9 +82,6 @@ const Slots = ({ babysitter }) => {
 
     function theSlot(time_of_day) {
         console.log("theSlot", time_of_day)
-        // let slot = babysitter.slots.map(slot => slot)
-        // {babysitter.slots.map(slot => { return card(slot) })}
-        // if (slot.time_of_day) {
         return <div>{time_of_day.map(time => {
             if (time === 0) {
                 return <li>Morning</li>

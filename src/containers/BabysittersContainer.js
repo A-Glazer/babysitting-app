@@ -31,7 +31,12 @@ class BabysittersContainer extends React.Component {
                     <Switch>
                         <Route path='/babysitters/new' component={BabysitterInput} />
                         <Route path='/babysitters/:id' render={(routerProps) =>
-                            <BabysitterShow {...routerProps} babysitters={this.props.babysitters} />} />
+                            <BabysitterShow
+                                {...routerProps}
+                                babysitters={this.props.babysitters}
+                                deleteBabysitter={this.props.deleteBabysitter}
+                            />}
+                        />
                         <Route path='/babysitters' render={(routerProps) =>
                             <Babysitters {...routerProps} babysitters={this.props.babysitters} />} />
                     </Switch>
@@ -44,15 +49,6 @@ class BabysittersContainer extends React.Component {
         return (
             <div>
                 {this.handleLoading()}
-                {/* <Switch>
-                    <Route path='/babysitters/new' component={BabysitterInput} />
-
-                    <Route path='/babysitters/:id' render={(routerProps) =>
-                        <BabysitterShow {...routerProps} babysitters={this.props.babysitter} />} />
-                    <Route path='/babysitters' render={(routerProps) =>
-                        <Babysitters {...routerProps} babysitters={this.props.babysitters} />} />
-
-                </Switch> */}
             </div>
 
         )
@@ -66,5 +62,11 @@ const mapStateToProps = state => {
     }
 }
 
+const mapDispatchToProps = dispatch => {
+    return {
+        deleteBabysitter: id => dispatch({ type: 'DELETE_BABYSITTER', id })
+    }
+}
 
-export default connect(mapStateToProps)(BabysittersContainer)
+
+export default connect(mapStateToProps, mapDispatchToProps)(BabysittersContainer)
