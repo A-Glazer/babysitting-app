@@ -59,18 +59,15 @@ export default function babysitterReducer(state = { babysitters: [], loading: tr
             //    {id: 51, day_of_week: 0, time_of_day: 0, babysitter_id: 3}
             let otherBabysitters = [...state.babysitters]
             let babysitter = otherBabysitters.filter(babysitter => babysitter.id == action.payload.babysitter_id)
-            let slotIndex = babysitter[0].slots.findIndex(slot => slot.day_of_week === action.payload.day_of_week)
-            // console.log("babysitter", babysitter)
-            // console.log("action.payload.id", action.payload)
-            // console.log("babysitter[0].slots", babysitter[0].slots)
-            // debugger
-            // find day of week and delete slot in day of week
-            babysitter[0].slots.splice(slotIndex, 1)
-            // console.log("new", babysitter[0].slots)
-            // const slots = "test" 
+            // let slotIndex = (babysitter[0].slots[action.payload.day_of_week].time_of_day = [])
+            babysitter[0].slots[action.payload.day_of_week].time_of_day = []
+            // babysitter[0].slots.splice(slotIndex, 1)
+            let final = [...otherBabysitters.filter(babysitter => babysitter.id !== action.payload.babysitter_id),
+                ...babysitter]
+                console.log("final", final)
             return {
                 ...state,
-                babysitter: babysitter
+                babysitters: final
             }
 
 

@@ -99,7 +99,14 @@ const Slots = ({ babysitter, deleteSlot }) => {
     }
 }
 
-export default connect(null, { deleteSlot })(Slots)
+const mapStateToProps = state => {
+    return {
+        babysitters: state.babysitters,
+        loading: state.loading
+    }
+  }
+
+export default connect(mapStateToProps, { deleteSlot })(Slots)
 
 
 // babysitter={this.props.babysitter}
