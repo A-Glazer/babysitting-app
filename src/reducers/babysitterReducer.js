@@ -55,6 +55,11 @@ export default function babysitterReducer(state = { babysitters: [], loading: tr
                 loading: false
             }
 
+        case "DELETE_SLOT":
+            debugger
+            // const slots = "test" 
+            return {...state}
+
         default:
             return state
 

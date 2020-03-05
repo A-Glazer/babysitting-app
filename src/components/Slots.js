@@ -3,14 +3,17 @@ import Card from 'react-bootstrap/Card'
 import CardDeck from 'react-bootstrap/CardDeck'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Row from 'react-bootstrap/Row'
+import { connect } from 'react-redux'
+import { deleteSlot } from '../actions/deleteSlot'
 // import Button from 'react-bootstrap/Button'
 // import { Link } from 'react-router-dom'
 // import { render } from '@testing-library/react'
 // import Col from 'react-bootstrap/Col'
 
 
-const Slots = ({ babysitter }) => {
+const Slots = ({ babysitter, deleteSlot }) => {
 
+    // const {babysitter, deleteBabysitter, babysitterId} = this.props
     // {debugger}
     return (
         <div>
@@ -54,8 +57,9 @@ const Slots = ({ babysitter }) => {
         }
     }
 
-    function removeSlot() {
-        
+    function removeSlot(slot, babysitter) {
+        debugger
+        deleteSlot(slot, babysitter)
     }
 
     function card(slot) {
@@ -68,7 +72,7 @@ const Slots = ({ babysitter }) => {
                         <ListGroup variant="info">
                             <ListGroup.Item>
                                 {theSlot(slot.time_of_day)}
-                            <button variant="link" size="sm" className="reset-button" onClick={removeSlot()}>Reset {dayToString(slot.day_of_week)}</button>
+                            <button variant="link" size="sm" className="reset-button" onClick={() => removeSlot(slot, babysitter)}>Reset {dayToString(slot.day_of_week)}</button>
                             </ListGroup.Item>
                         </ListGroup>
                         {/* <Card.Footer className="text-muted reset-button"> */}
@@ -96,4 +100,9 @@ const Slots = ({ babysitter }) => {
     }
 }
 
-export default Slots
+export default connect(null, { deleteSlot })(Slots)
+
+
+// babysitter={this.props.babysitter}
+// deleteBabysitter={this.props.deleteBabysitter}
+// babysitterId={this.props.babysitter.id}
