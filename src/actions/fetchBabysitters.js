@@ -48,7 +48,8 @@ export const slotMerge = babyData => {
                 allSlots[slot.day_of_week].time_of_day.push({time: slot.time_of_day, id: slot.id})
             }
         }
-        return { ...babysitter, slots: allSlots }
+        let sortSlots = allSlots.map(s => ({ ...s, time_of_day: s.time_of_day.sort((t1, t2) => t1.time - t2.time)}))
+        return { ...babysitter, slots: sortSlots }
     })
 }
 

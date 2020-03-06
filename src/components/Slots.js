@@ -84,7 +84,7 @@ const Slots = ({ babysitter, deleteSlot }) => {
     }
 
     function theSlot(time_of_day) {
-        console.log("theSlot", time_of_day)
+        // console.log("theSlot", time_of_day)
         return <div>{time_of_day.map(time => {
             if (time.time === 0) {
                 return <li>Morning</li>

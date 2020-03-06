@@ -60,6 +60,7 @@ export default function babysitterReducer(state = { babysitters: [], loading: tr
             let otherBabysitters = [...state.babysitters]
             let babysitter = otherBabysitters.filter(babysitter => babysitter.id == action.payload.babysitter_id)
             // let slotIndex = (babysitter[0].slots[action.payload.day_of_week].time_of_day = [])
+            // debugger
             babysitter[0].slots[action.payload.day_of_week].time_of_day = []
             // babysitter[0].slots.splice(slotIndex, 1)
             let final = [...otherBabysitters.filter(babysitter => babysitter.id !== action.payload.babysitter_id),
