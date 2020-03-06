@@ -3,15 +3,12 @@ import SlotInput from '../components/SlotInput'
 import Slots from '../components/Slots'
 import Spinner from 'react-bootstrap/Spinner'
 import { connect } from 'react-redux'
-// import { fetchBabysitters } from '../actions/fetchBabysitters'
-// import { render } from 'react-dom'
 
 class SlotsContainer extends React.Component {
 
     render() {
         if (this.props.loading) {
             console.log("loading is true")
-            // debugger
             return (
                 <div>
                     <Spinner animation="border" role="status">
@@ -19,7 +16,6 @@ class SlotsContainer extends React.Component {
                     </Spinner>
                 </div>)
         } else {
-            // debugger
             console.log("loading is false")
             return (
                 <div>
@@ -41,11 +37,6 @@ const mapStateToProps = state => {
         loading: state.loading
     }
 }
-
-// need to move to actions
-// const mapDispatchToProps = dispatch => ({
-//     deleteSlot: slot => dispatch({type: "DELETE_SLOT", slot})
-// })
 
 export default connect(mapStateToProps)(SlotsContainer)
 

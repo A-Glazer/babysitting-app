@@ -80,20 +80,5 @@ drop down menu for time_of_day (23 min expense tracker part 9)
 
 
 to do:
-- remove duplicate time_of_day
-- only show slot card if time_of_day 
-- sort time_of_day (morn, aft, eve)
-- add edit babysitter
-
-(- work on comments)
-
-
-bootstrap
-Cards - for each babysitter
-Dropdowns - for date and time
-Forms - all the forms (check out form grid)
-Modal - for a delete pop up asking you if you want to delete
-Navbar
-buttons/overlays
-spinners - while loading a fetch
+- create readme
 

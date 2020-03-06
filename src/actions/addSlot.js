@@ -1,5 +1,5 @@
-import { slotMerge} from './fetchBabysitters'
- 
+import { slotMerge } from './fetchBabysitters'
+
 export const addSlot = (slot, babysitter) => {
 
     return (dispatch) => {
@@ -18,8 +18,8 @@ export const addSlot = (slot, babysitter) => {
 
                 const newBabysitter = slotMerge([babysitter])[0]
                 dispatch({ type: 'ADD_SLOT', payload: newBabysitter })
-    })
-}
+            })
+    }
 
-    
+
 }

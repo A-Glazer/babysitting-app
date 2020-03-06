@@ -2,9 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addSlot } from '../actions/addSlot'
 
-import Accordion from 'react-bootstrap/Accordion'
-import Card from 'react-bootstrap/Card'
-
 class SlotInput extends React.Component {
 
     state = {
@@ -51,7 +48,7 @@ class SlotInput extends React.Component {
                         <option value="5" key={5}>Friday</option>
                         <option value="6" key={6}>Saturday</option>
                     </select>
-                    
+
                     <label className="addSpace">Time Availability: </label>
                     <select name="time_of_day" value={this.state.time_of_day} onChange={this.handleOnChange} required min="0" max="2">
                         <option>Select Time</option>
@@ -60,12 +57,11 @@ class SlotInput extends React.Component {
                         <option value="2" key={2}>Evening</option>
                     </select>
                     <label className="addSpace">    </label>
-                    <input type="submit"/>
+                    <input type="submit" />
                 </form>
             </div >
         )
     }
-
 }
 
 export default connect(null, { addSlot })(SlotInput)

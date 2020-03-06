@@ -3,10 +3,6 @@ import { connect } from 'react-redux'
 import { addBabysitter } from '../actions/addBabysitter'
 import Flip from 'react-reveal/Flip';
 import Fade from 'react-reveal/Fade';
-// import Form from 'react-bootstrap/Form'
-// import Button from 'react-bootstrap/Button'
-// import Col from 'react-bootstrap/Col'
-// import SlotInput from './SlotInput'
 
 class BabysitterInput extends React.Component {
 
@@ -54,7 +50,6 @@ class BabysitterInput extends React.Component {
                             <label>Phone Number:  </label>
                             <input type="text" placeholder=" Phone Number" value={this.state.phone_number} name="phone_number" onChange={this.handleOnChange} />
                             <br /><br />
-                            {/* <SlotInput babysitter={this.props.babysitter}/> */}
                             <input type="submit" />
 
                         </Fade>

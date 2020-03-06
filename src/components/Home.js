@@ -1,5 +1,4 @@
 import React from 'react'
-// import Babysitters from './Babysitters'
 import Flip from 'react-reveal/Flip';
 import Carousel from 'react-bootstrap/Carousel'
 import babysitterWithKid from '../images/babysitterWithKid.jpg'
@@ -8,16 +7,13 @@ import readingABook from '../images/readingABook.jpg'
 import Sisters from '../images/Sisters.jpg'
 import "../styles.css"
 import Button from 'react-bootstrap/Button'
-import { Link, Route, Switch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 export default class Home extends React.Component {
 
     render() {
-
-
         return (
-            // Carousel
             <div>
                 <div className="imgContainer">
                     <Carousel >
@@ -58,7 +54,6 @@ export default class Home extends React.Component {
                         </div>
                     </div>
                 </div>
-
 
                 <br />  <br />
                 <h2>Would you like to: </h2>

@@ -1,6 +1,6 @@
 import React from 'react';
 import "./styles.css"
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import BabysittersContainer from './containers/BabysittersContainer'
 import Home from './components/Home'
 import { Route, Switch } from 'react-router-dom'
@@ -13,17 +13,16 @@ class App extends React.Component {
 
   componentDidMount() {
     this.props.fetchBabysitters()
-}
+  }
 
   render() {
-// debugger
     return (
       <div className="App">
         <NavBar />
         <Switch>
           <Route path='/babysitters' component={BabysittersContainer} />
           <Route path='/' component={Home} />
-          <Route path='/babysitters/:id' component={BabysitterShow}/>
+          <Route path='/babysitters/:id' component={BabysitterShow} />
         </Switch>
       </div>
     );
@@ -32,8 +31,8 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return {
-      babysitters: state.babysitters,
-      loading: state.loading
+    babysitters: state.babysitters,
+    loading: state.loading
   }
 }
 
