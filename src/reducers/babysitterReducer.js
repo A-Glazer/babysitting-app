@@ -34,7 +34,12 @@ export default function babysitterReducer(state = { babysitters: [], loading: tr
         case "DELETE_SLOT":
             let otherBabysitters = [...state.babysitters]
             let babysitter = otherBabysitters.filter(babysitter => babysitter.id == action.payload.babysitter_id)
-            babysitter[0].slots[action.payload.day_of_week].time_of_day = []
+            
+            if (babysitter[0]){
+                babysitter[0].slots[action.payload.day_of_week].time_of_day = []
+            }
+            
+           
             let final = [...otherBabysitters.filter(babysitter => babysitter.id !== action.payload.babysitter_id),
                 ...babysitter]
             return {
