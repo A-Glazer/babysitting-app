@@ -6,9 +6,20 @@ import { Link } from 'react-router-dom'
 
 class BabysitterCard extends React.Component {
 
+    state = {
+        number: 0
+    }
+    
+    addVote = () => {
+         this.setState(({number}) =>{
+            return {number: number + 1}
+         })
+     }
+
     render() {
 
         let { id, first_name, last_name, phone_number } = this.props.babysitter
+        
 
         return (
             <div>
@@ -18,8 +29,11 @@ class BabysitterCard extends React.Component {
                             <Card.Title>{last_name}, {first_name}</Card.Title>
                             <Card.Text>{phone_number}</Card.Text>
                             <Link to={{pathname: `/babysitters/${id}`}}>
-                                <Button>View Availability</Button>
+                                <Button>View Availability</Button><br/>
+                                
                             </Link>
+                                <Button onClick={this.addVote}>Upvote</Button>
+                                <p>{this.state.number}</p>
                         </Card.Body>
                     </Card>
                 </CardDeck>
