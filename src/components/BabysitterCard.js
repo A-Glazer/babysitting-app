@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+// import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
+import InputGroup from 'react-bootstrap/InputGroup'
+import FormControl from 'react-bootstrap/FormControl'
 
 class BabysitterCard extends React.Component {
 
@@ -43,16 +46,18 @@ class BabysitterCard extends React.Component {
 
                             </Link>
                         </Card.Body>
-                        <Card.Footer>
-                            <Container>
-                                <Row>
-                                    <Col>Rating:</Col>
-                                    <Col><p onClick={this.addVote}>Like:{this.state.upNumber}</p></Col>
-                                    <Col><p onClick={this.addDownVote}>Dislike:{this.state.downNumber}</p></Col>
-                                </Row>
-                            </Container>
-                            
-                            {/* Rating: <button onClick={this.addVote}>Like:{this.state.number}</button> */}
+                        <Card.Footer >
+                            <InputGroup className="mb-3 justify-content-between">
+                                <InputGroup.Prepend>
+                                    <Button variant="outline-secondary" onClick={this.addVote}>Like</Button>
+                                    <InputGroup.Text>{this.state.upNumber}</InputGroup.Text>
+                                </InputGroup.Prepend>
+                               
+                                <InputGroup.Prepend>
+                                    <Button variant="outline-secondary" onClick={this.addDownVote}>Dislike</Button>
+                                    <InputGroup.Text>{this.state.downNumber}</InputGroup.Text>
+                                </InputGroup.Prepend>
+                            </InputGroup>
                         </Card.Footer>
                     </Card>
                 </CardDeck>
